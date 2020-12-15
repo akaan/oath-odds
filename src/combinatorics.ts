@@ -1,4 +1,4 @@
-import { flatten } from "utils";
+import { flatten } from "./utils";
 
 /**
  * Computes the cartesian product of arrays of elements.
