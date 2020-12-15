@@ -1,0 +1,15 @@
+module.exports = {
+  src: ["./src"],
+  mode: "file",
+  includeDeclarations: true,
+  tsconfig: "tsconfig.json",
+  out: "./dist/pages",
+  excludePrivate: true,
+  excludeProtected: true,
+  excludeExternals: true,
+  readme: "README.md",
+  name: "oath-odds",
+  ignoreCompilerErrors: true,
+  plugin: "none",
+  listInvalidSymbolLinks: true,
+};
