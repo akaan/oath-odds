@@ -1,0 +1,43 @@
+name: Publish to NPM
+on:
+  release:
+    types: [created]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: "https://registry.npmjs.org"
+
+      # Configure Git with user name and email
+      - name: Configure git
+        run: |
+          git config user.email "akaan.qualrus@gmail.com"
+          git config user.name "Akaan Qualrus"
+
+      # Get version number from release name
+      - name: Version number
+        uses: frabert/replace-string-action@v1.1
+        id: versionnumber
+        with:
+          pattern: "v(.*)"
+          string: ${{ github.event.release.tag_name }}
+          replace-with: "$1"
+
+      # Install dependencies
+      - run: yarn --frozen-lockfile
+
+      # Publish to NPM (git tag is created by the GitHub release)
+      - run: yarn publish --new-version ${{ steps.versionnumber.outputs.replaced }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Push updates
+      - run: git push
