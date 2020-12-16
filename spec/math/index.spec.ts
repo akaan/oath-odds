@@ -1,11 +1,8 @@
 // tslint:disable:no-unused-expression
 import { expect } from "chai";
 import "mocha";
-import { odds } from "../src";
-import { Fraction } from "../src/math";
-import { RandomDevice } from "../src/RandomDevice";
-import { SetWithOdds } from "../src/SetWithOdds";
-import { arrayEquals } from "../src/utils";
+import { Fraction, odds, RandomDevice, SetWithOdds } from "../../src/math";
+import { arrayEquals } from "../../src/utils";
 
 function compareToExpected<Outcome>(
   expectFn: typeof expect,

@@ -1,4 +1,4 @@
-import { Fraction } from "./math";
+import { Fraction } from "./Fraction";
 
 /**
  * This type encapsulate a set and the odds of obtaining this set from a random

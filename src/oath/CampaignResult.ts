@@ -1,5 +1,5 @@
 /**
- * TYpe to hold a campaign result.
+ * Type to hold a campaign result.
  */
 export interface CampaignResult {
   /** The rolled attack value. */

@@ -1,8 +1,7 @@
 // tslint:disable:no-unused-expression
 import { expect } from "chai";
 import "mocha";
-import { Fraction } from "../src/math";
-import { combineSetWithOdds, SetWithOdds } from "../src/SetWithOdds";
+import { combineSetWithOdds, Fraction, SetWithOdds } from "../../src/math";
 
 describe("SetWithOdds", () => {
   describe("combineSetWithOdds", () => {

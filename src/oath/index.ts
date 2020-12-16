@@ -1,5 +1,4 @@
-import { Fraction } from "../math";
-import { RandomDevice } from "../RandomDevice";
+import { Fraction, RandomDevice } from "../math";
 import { AttackDieFace } from "./AttackDieFace";
 import { CampaignResult } from "./CampaignResult";
 import { DefenseDieFace } from "./DefenseDieFace";
