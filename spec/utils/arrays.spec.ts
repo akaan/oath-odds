@@ -1,7 +1,7 @@
 // tslint:disable:no-unused-expression
 import { expect } from "chai";
 import "mocha";
-import { arrayEquals, flatten, replace } from "../src/utils";
+import { arrayEquals, flatten, replace } from "../../src/utils/arrays";
 
 describe("utils", () => {
   describe("flatten", () => {

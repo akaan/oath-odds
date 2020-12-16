@@ -1,7 +1,7 @@
 // tslint:disable:no-unused-expression
 import { expect } from "chai";
 import "mocha";
-import { Fraction } from "../src/Fraction";
+import { Fraction } from "../../src/math/Fraction";
 
 describe("Fraction", () => {
   it("fractions with same numerator and denominator are equal", () => {

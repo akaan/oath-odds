@@ -1,4 +1,4 @@
-import { cartesianProduct } from "./combinatorics";
+import { cartesianProduct } from "./math";
 import { RandomDevice } from "./RandomDevice";
 import { combineSetWithOdds, SetWithOdds } from "./SetWithOdds";
 import { arrayEquals, replace } from "./utils";

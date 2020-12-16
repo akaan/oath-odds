@@ -1,4 +1,4 @@
-import { Fraction } from "./Fraction";
+import { Fraction } from "./math";
 import { SetWithOdds } from "./SetWithOdds";
 
 /**

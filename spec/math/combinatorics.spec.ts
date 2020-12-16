@@ -1,7 +1,7 @@
 // tslint:disable:no-unused-expression
 import { expect } from "chai";
 import "mocha";
-import { cartesianProduct } from "../src/combinatorics";
+import { cartesianProduct } from "../../src/math/combinatorics";
 
 describe("combinatorics", () => {
   describe("cartesianProduct", () => {

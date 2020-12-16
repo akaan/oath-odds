@@ -2,7 +2,7 @@
 import { expect } from "chai";
 import "mocha";
 import { odds } from "../src";
-import { Fraction } from "../src/Fraction";
+import { Fraction } from "../src/math";
 import { RandomDevice } from "../src/RandomDevice";
 import { SetWithOdds } from "../src/SetWithOdds";
 import { arrayEquals } from "../src/utils";
