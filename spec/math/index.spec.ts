@@ -21,7 +21,7 @@ function compareToExpected<Outcome>(
 
       expectFn(
         expectedResults.length,
-        "There should be exactly 1 set with the same tokens"
+        "There should be exactly 1 set with the same outcomes"
       ).to.equal(1);
 
       if (expectedResults.length === 1) {

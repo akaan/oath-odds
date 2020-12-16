@@ -78,6 +78,10 @@ export class Fraction {
     );
   }
 
+  public toString(): string {
+    return `${this._numerator} / ${this._denominator}`;
+  }
+
   /**
    * Reduce the fraction using the greatest common divider of the numerator
    * and the denominator.

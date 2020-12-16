@@ -15,7 +15,7 @@ module.exports = {
     filename: `${pkg.name}.js`,
     path: path.resolve(__dirname, "dist"),
     globalObject: "this",
-    library: pkg.name,
+    library: "OathOdds",
     libraryTarget: "umd",
   },
   resolve: {

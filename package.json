@@ -1,6 +1,6 @@
 {
   "name": "oath-odds",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A library to evaluate odds of success in a campaign while playing the Oath board game",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
