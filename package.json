@@ -1,8 +1,8 @@
 {
   "name": "oath-odds",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A library to evaluate odds of success in a campaign while playing the Oath board game",
-  "main": "lib/index.js",
+  "main": "dist/oath-odds.js",
   "types": "lib/index.d.ts",
   "author": "Akaan Qualrus <akaan.qualrus@gmail.com>",
   "license": "GPL-3.0-or-later",
