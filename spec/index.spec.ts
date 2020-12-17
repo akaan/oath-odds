@@ -1,11 +1,12 @@
 // tslint:disable:no-unused-expression
 import { expect } from "chai";
 import "mocha";
-import { CampaignResultWithOdds, Fraction, rollCampaign } from "../src";
+import { Fraction, rollCampaign } from "../src";
 import {
   CampaignResult,
   campaignResultCompareFn,
 } from "../src/oath/CampaignResult";
+import { WithOdds } from "../src/math/WithOdds";
 
 function printCampaignResult(result: CampaignResult): string {
   return `{ attack: ${result.attack}, defense: ${result.defense}, kill: ${result.kill} }`;
@@ -13,8 +14,8 @@ function printCampaignResult(result: CampaignResult): string {
 
 function compareToExpected(
   expectFn: typeof expect,
-  expected: CampaignResultWithOdds[],
-  actual: CampaignResultWithOdds[]
+  expected: WithOdds<CampaignResult>[],
+  actual: WithOdds<CampaignResult>[]
 ): void {
   expectFn(actual.length, "Sets have different lengths").to.equal(
     expected.length
@@ -24,7 +25,7 @@ function compareToExpected(
     for (const actualResult of actual) {
       const expectedResults = expected.filter(
         (result) =>
-          campaignResultCompareFn(result.result, actualResult.result) === 0
+          campaignResultCompareFn(result.value, actualResult.value) === 0
       );
 
       expectFn(
@@ -34,10 +35,10 @@ function compareToExpected(
 
       if (expectedResults.length === 1) {
         expectFn(
-          actualResult.odds.sameAs(expectedResults[0].odds),
+          actualResult.oddsOfValue.sameAs(expectedResults[0].oddsOfValue),
           `Result with campaign result ${printCampaignResult(
-            actualResult.result
-          )} does not have the same odds: expected = ${expectedResults[0].odds.toString()}, actual = ${actualResult.odds.toString()}`
+            actualResult.value
+          )} does not have the same odds: expected = ${expectedResults[0].oddsOfValue.toString()}, actual = ${actualResult.oddsOfValue.toString()}`
         ).to.be.true;
       }
     }
@@ -49,43 +50,43 @@ describe("OathOdds", () => {
     it("", () => {
       const expected = [
         {
-          odds: new Fraction(1, 12),
-          result: { attack: 2, defense: 0, kill: 1 },
+          oddsOfValue: new Fraction(1, 12),
+          value: { attack: 2, defense: 0, kill: 1 },
         },
         {
-          odds: new Fraction(1, 18),
-          result: { attack: 2, defense: 1, kill: 1 },
+          oddsOfValue: new Fraction(1, 18),
+          value: { attack: 2, defense: 1, kill: 1 },
         },
         {
-          odds: new Fraction(1, 36),
-          result: { attack: 2, defense: 2, kill: 1 },
+          oddsOfValue: new Fraction(1, 36),
+          value: { attack: 2, defense: 2, kill: 1 },
         },
         {
-          odds: new Fraction(1, 6),
-          result: { attack: 1, defense: 0, kill: 0 },
+          oddsOfValue: new Fraction(1, 6),
+          value: { attack: 1, defense: 0, kill: 0 },
         },
         {
-          odds: new Fraction(1, 9),
-          result: { attack: 1, defense: 1, kill: 0 },
+          oddsOfValue: new Fraction(1, 9),
+          value: { attack: 1, defense: 1, kill: 0 },
         },
         {
-          odds: new Fraction(1, 18),
-          result: { attack: 1, defense: 2, kill: 0 },
+          oddsOfValue: new Fraction(1, 18),
+          value: { attack: 1, defense: 2, kill: 0 },
         },
         {
-          odds: new Fraction(1, 4),
-          result: { attack: 0, defense: 0, kill: 0 },
+          oddsOfValue: new Fraction(1, 4),
+          value: { attack: 0, defense: 0, kill: 0 },
         },
         {
-          odds: new Fraction(1, 6),
-          result: { attack: 0, defense: 1, kill: 0 },
+          oddsOfValue: new Fraction(1, 6),
+          value: { attack: 0, defense: 1, kill: 0 },
         },
         {
-          odds: new Fraction(1, 12),
-          result: { attack: 0, defense: 2, kill: 0 },
+          oddsOfValue: new Fraction(1, 12),
+          value: { attack: 0, defense: 2, kill: 0 },
         },
       ];
-      const results: CampaignResultWithOdds[] = rollCampaign(1, 1);
+      const results: WithOdds<CampaignResult>[] = rollCampaign(1, 1);
       compareToExpected(expect, expected, results);
     });
   });

@@ -1,5 +1,5 @@
 import { Fraction } from "./Fraction";
-import { SetWithOdds } from "./SetWithOdds";
+import { WithOdds } from "./WithOdds";
 
 /**
  * A device generating random outcomes with specific odds. For example, a
@@ -21,7 +21,7 @@ import { SetWithOdds } from "./SetWithOdds";
  */
 export class RandomDevice<Outcome> {
   /** The sets and associated odds this random device generates. */
-  private _outcomesWithOdds: SetWithOdds<Outcome>[] = [];
+  private _outcomesWithOdds: WithOdds<Outcome[]>[] = [];
 
   /**
    * Constructor for a random device.
@@ -32,8 +32,8 @@ export class RandomDevice<Outcome> {
   constructor(outcomesWithOdds: ReadonlyArray<[Outcome, Fraction]>) {
     for (const elem of outcomesWithOdds) {
       this._outcomesWithOdds.push({
-        odds: elem[1],
-        set: [elem[0]],
+        oddsOfValue: elem[1],
+        value: [elem[0]],
       });
     }
   }
@@ -45,7 +45,7 @@ export class RandomDevice<Outcome> {
    *   The possible outcomes (as sets) this random device can generate along
    * with the odds of each outcome.
    */
-  public getOutcomesWithOdds(): SetWithOdds<Outcome>[] {
+  public getOutcomesWithOdds(): WithOdds<Outcome[]>[] {
     return this._outcomesWithOdds;
   }
 }

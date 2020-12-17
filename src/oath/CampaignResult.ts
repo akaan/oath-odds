@@ -1,16 +1,26 @@
 /**
- * Type to hold a campaign result.
+ * Type to hold the result of an attack roll.
  */
-export interface CampaignResult {
+export interface AttackResult {
   /** The rolled attack value. */
   attack: number;
-
-  /** The rolled defense value. */
-  defense: number;
 
   /** The rolled killed value (from skulls). */
   kill: number;
 }
+
+/**
+ * Type to hold the result of a defense roll.
+ */
+export interface DefenseResult {
+  /** The rolled defense value. */
+  defense: number;
+}
+
+/**
+ * Type to hold a campaign result.
+ */
+export type CampaignResult = AttackResult & DefenseResult;
 
 /**
  * Compare 2 campaign results with following rules:

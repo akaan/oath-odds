@@ -5,31 +5,43 @@ import {
   AttackDieFace,
   campaignResultCompareFn,
   DefenseDieFace,
-  OathDieFace,
-  toCampaignResult,
+  toAttackResult,
+  toDefenseResult,
 } from "../../src/oath";
 
 describe("Oath domain model", () => {
-  describe("Attack and Defense dice faces", () => {
+  describe("Attack dice faces", () => {
     it("should have consistent order", () => {
-      const someFaces: OathDieFace[] = [
-        DefenseDieFace.DOUBLE,
-        DefenseDieFace.TWO_SHIELDS,
+      const someFaces: AttackDieFace[] = [
         AttackDieFace.HOLLOW_SWORD,
-        DefenseDieFace.SHIELD,
         AttackDieFace.TWO_SWORDS_AND_SKULL,
         AttackDieFace.SWORD,
-        DefenseDieFace.TWO_SHIELDS,
         AttackDieFace.SWORD,
+      ];
+
+      const expected: AttackDieFace[] = [
+        AttackDieFace.HOLLOW_SWORD,
+        AttackDieFace.SWORD,
+        AttackDieFace.SWORD,
+        AttackDieFace.TWO_SWORDS_AND_SKULL,
+      ];
+
+      expect(someFaces.sort()).to.deep.equal(expected);
+    });
+  });
+
+  describe("Defense dice faces", () => {
+    it("should have consistent order", () => {
+      const someFaces: DefenseDieFace[] = [
+        DefenseDieFace.DOUBLE,
+        DefenseDieFace.TWO_SHIELDS,
+        DefenseDieFace.SHIELD,
+        DefenseDieFace.TWO_SHIELDS,
         DefenseDieFace.BLANK,
         DefenseDieFace.SHIELD,
       ];
 
-      const expected: OathDieFace[] = [
-        AttackDieFace.HOLLOW_SWORD,
-        AttackDieFace.SWORD,
-        AttackDieFace.SWORD,
-        AttackDieFace.TWO_SWORDS_AND_SKULL,
+      const expected: DefenseDieFace[] = [
         DefenseDieFace.BLANK,
         DefenseDieFace.SHIELD,
         DefenseDieFace.SHIELD,
@@ -79,29 +91,37 @@ describe("Oath domain model", () => {
     });
   });
 
-  describe("toCampaignResult", () => {
+  describe("toAttackResult", () => {
     it("can sum up a bunch of die faces into a campaign result", () => {
-      const rolled: OathDieFace[] = [
-        DefenseDieFace.DOUBLE,
-        DefenseDieFace.TWO_SHIELDS,
+      const rolled: AttackDieFace[] = [
         AttackDieFace.HOLLOW_SWORD,
-        DefenseDieFace.SHIELD,
         AttackDieFace.TWO_SWORDS_AND_SKULL,
         AttackDieFace.SWORD,
-        DefenseDieFace.TWO_SHIELDS,
         AttackDieFace.SWORD,
         AttackDieFace.HOLLOW_SWORD,
-        DefenseDieFace.BLANK,
-        DefenseDieFace.SHIELD,
         AttackDieFace.HOLLOW_SWORD,
       ];
 
-      const result = toCampaignResult(rolled);
+      const result = toAttackResult(rolled);
 
-      expect(result).to.deep.equal({ attack: 5, defense: 12, kill: 1 });
-      expect(result.attack).to.equal(5);
-      expect(result.defense).to.equal(12);
-      expect(result.kill).to.equal(1);
+      expect(result).to.deep.equal({ attack: 5, kill: 1 });
+    });
+  });
+
+  describe("toDefenseResult", () => {
+    it("can sum up a bunch of die faces into a campaign result", () => {
+      const rolled: DefenseDieFace[] = [
+        DefenseDieFace.DOUBLE,
+        DefenseDieFace.TWO_SHIELDS,
+        DefenseDieFace.SHIELD,
+        DefenseDieFace.TWO_SHIELDS,
+        DefenseDieFace.BLANK,
+        DefenseDieFace.SHIELD,
+      ];
+
+      const result = toDefenseResult(rolled);
+
+      expect(result).to.deep.equal({ defense: 12 });
     });
   });
 });

@@ -1,13 +1,21 @@
 // tslint:disable:no-unused-expression
 import { expect } from "chai";
 import "mocha";
-import { Fraction, odds, RandomDevice, SetWithOdds } from "../../src/math";
+import {
+  combineSetWithOdds,
+  Fraction,
+  odds,
+  RandomDevice,
+  roll,
+  WithOdds,
+} from "../../src/math";
 import { arrayEquals } from "../../src/utils";
 
 function compareToExpected<Outcome>(
   expectFn: typeof expect,
-  expected: SetWithOdds<Outcome>[],
-  actual: SetWithOdds<Outcome>[]
+  expected: WithOdds<Outcome>[],
+  actual: WithOdds<Outcome>[],
+  valuesAreSameFn: (a: Outcome, b: Outcome) => boolean
 ): void {
   expectFn(actual.length, "Sets have different lengths").to.equal(
     expected.length
@@ -16,7 +24,7 @@ function compareToExpected<Outcome>(
   if (actual.length === expected.length) {
     for (const actualResult of actual) {
       const expectedResults = expected.filter((result) =>
-        arrayEquals(result.set.sort(), actualResult.set.sort())
+        valuesAreSameFn(result.value, actualResult.value)
       );
 
       expectFn(
@@ -26,87 +34,187 @@ function compareToExpected<Outcome>(
 
       if (expectedResults.length === 1) {
         expectFn(
-          actualResult.odds.sameAs(expectedResults[0].odds),
-          `Result with set ${actualResult.set} does not have the same odds`
+          actualResult.oddsOfValue.sameAs(expectedResults[0].oddsOfValue),
+          `Result with set ${actualResult.value} does not have the same odds`
         ).to.be.true;
       }
     }
   }
 }
 
-describe("odds", () => {
-  it("with only 1 random device", () => {
-    const d6 = new RandomDevice<number>([
-      [1, new Fraction(1, 6)],
-      [2, new Fraction(1, 6)],
-      [3, new Fraction(1, 6)],
-      [4, new Fraction(1, 6)],
-      [5, new Fraction(1, 6)],
-      [6, new Fraction(1, 6)],
-    ]);
+function arraysOfOutcomesAreSame<Outcome>(a: Outcome[], b: Outcome[]): boolean {
+  return arrayEquals(a.sort(), b.sort());
+}
 
-    const expected: SetWithOdds<number>[] = [
-      { set: [1], odds: new Fraction(1, 6) },
-      { set: [2], odds: new Fraction(1, 6) },
-      { set: [3], odds: new Fraction(1, 6) },
-      { set: [4], odds: new Fraction(1, 6) },
-      { set: [5], odds: new Fraction(1, 6) },
-      { set: [6], odds: new Fraction(1, 6) },
-    ];
+function sum(numbers: number[]): number {
+  return numbers.reduce((x, y) => x + y);
+}
 
-    const results: SetWithOdds<number>[] = odds([d6]);
+describe("math", () => {
+  describe("combineSetWithOdds", () => {
+    it("combines 2 sets with odds", () => {
+      const swo1: WithOdds<number[]> = {
+        oddsOfValue: new Fraction(1, 3),
+        value: [1, 2],
+      };
 
-    compareToExpected(expect, expected, results);
+      const swo2: WithOdds<string[]> = {
+        oddsOfValue: new Fraction(1, 2),
+        value: ["a", "b"],
+      };
+
+      const combined = combineSetWithOdds(swo1, swo2);
+
+      expect(combined.value).to.deep.equal([1, 2, "a", "b"]);
+      expect(combined.oddsOfValue.sameAs(new Fraction(1, 6))).to.be.true;
+    });
+
+    it("can be used for reduction", () => {
+      const sets: WithOdds<number[]>[] = [
+        { value: [1, 2], oddsOfValue: new Fraction(1, 2) },
+        { value: [5, 6], oddsOfValue: new Fraction(1, 3) },
+        { value: [8, 9], oddsOfValue: new Fraction(1, 4) },
+      ];
+
+      const combined = sets.reduce(combineSetWithOdds);
+
+      expect(combined.value).to.deep.equal([1, 2, 5, 6, 8, 9]);
+      expect(combined.oddsOfValue.sameAs(new Fraction(1, 24))).to.be.true;
+    });
   });
 
-  it("with 2 random devices", () => {
-    const d4 = new RandomDevice<number>([
-      [1, new Fraction(1, 4)],
-      [2, new Fraction(1, 4)],
-      [3, new Fraction(1, 4)],
-      [4, new Fraction(1, 4)],
-    ]);
+  describe("odds", () => {
+    it("with only 1 random device", () => {
+      const d6 = new RandomDevice<number>([
+        [1, new Fraction(1, 6)],
+        [2, new Fraction(1, 6)],
+        [3, new Fraction(1, 6)],
+        [4, new Fraction(1, 6)],
+        [5, new Fraction(1, 6)],
+        [6, new Fraction(1, 6)],
+      ]);
 
-    const abcDie = new RandomDevice<string>([
-      ["a", new Fraction(1, 3)],
-      ["b", new Fraction(1, 3)],
-      ["c", new Fraction(1, 3)],
-    ]);
+      const expected: WithOdds<number[]>[] = [
+        { value: [1], oddsOfValue: new Fraction(1, 6) },
+        { value: [2], oddsOfValue: new Fraction(1, 6) },
+        { value: [3], oddsOfValue: new Fraction(1, 6) },
+        { value: [4], oddsOfValue: new Fraction(1, 6) },
+        { value: [5], oddsOfValue: new Fraction(1, 6) },
+        { value: [6], oddsOfValue: new Fraction(1, 6) },
+      ];
 
-    const expected: SetWithOdds<any>[] = [
-      { set: [1, "a"], odds: new Fraction(1, 12) },
-      { set: [1, "b"], odds: new Fraction(1, 12) },
-      { set: [1, "c"], odds: new Fraction(1, 12) },
-      { set: [2, "a"], odds: new Fraction(1, 12) },
-      { set: [2, "b"], odds: new Fraction(1, 12) },
-      { set: [2, "c"], odds: new Fraction(1, 12) },
-      { set: [3, "a"], odds: new Fraction(1, 12) },
-      { set: [3, "b"], odds: new Fraction(1, 12) },
-      { set: [3, "c"], odds: new Fraction(1, 12) },
-      { set: [4, "a"], odds: new Fraction(1, 12) },
-      { set: [4, "b"], odds: new Fraction(1, 12) },
-      { set: [4, "c"], odds: new Fraction(1, 12) },
-    ];
+      const results: WithOdds<number[]>[] = odds([d6]);
 
-    const results: SetWithOdds<number>[] = odds([d4, abcDie]);
+      compareToExpected<number[]>(
+        expect,
+        expected,
+        results,
+        arraysOfOutcomesAreSame
+      );
+    });
 
-    compareToExpected(expect, expected, results);
+    it("with 2 random devices", () => {
+      const d4 = new RandomDevice<number>([
+        [1, new Fraction(1, 4)],
+        [2, new Fraction(1, 4)],
+        [3, new Fraction(1, 4)],
+        [4, new Fraction(1, 4)],
+      ]);
+
+      const abcDie = new RandomDevice<string>([
+        ["a", new Fraction(1, 3)],
+        ["b", new Fraction(1, 3)],
+        ["c", new Fraction(1, 3)],
+      ]);
+
+      const expected: WithOdds<any[]>[] = [
+        { value: [1, "a"], oddsOfValue: new Fraction(1, 12) },
+        { value: [1, "b"], oddsOfValue: new Fraction(1, 12) },
+        { value: [1, "c"], oddsOfValue: new Fraction(1, 12) },
+        { value: [2, "a"], oddsOfValue: new Fraction(1, 12) },
+        { value: [2, "b"], oddsOfValue: new Fraction(1, 12) },
+        { value: [2, "c"], oddsOfValue: new Fraction(1, 12) },
+        { value: [3, "a"], oddsOfValue: new Fraction(1, 12) },
+        { value: [3, "b"], oddsOfValue: new Fraction(1, 12) },
+        { value: [3, "c"], oddsOfValue: new Fraction(1, 12) },
+        { value: [4, "a"], oddsOfValue: new Fraction(1, 12) },
+        { value: [4, "b"], oddsOfValue: new Fraction(1, 12) },
+        { value: [4, "c"], oddsOfValue: new Fraction(1, 12) },
+      ];
+
+      const results: WithOdds<any[]>[] = odds<any>([d4, abcDie]);
+
+      compareToExpected<any[]>(
+        expect,
+        expected,
+        results,
+        arraysOfOutcomesAreSame
+      );
+    });
+
+    it("combines identical sets", () => {
+      const d2 = new RandomDevice<number>([
+        [1, new Fraction(1, 2)],
+        [2, new Fraction(1, 2)],
+      ]);
+
+      const expected: WithOdds<any[]>[] = [
+        { value: [1, 1], oddsOfValue: new Fraction(1, 4) },
+        { value: [1, 2], oddsOfValue: new Fraction(1, 2) },
+        { value: [2, 2], oddsOfValue: new Fraction(1, 4) },
+      ];
+
+      const results: WithOdds<number[]>[] = odds([d2, d2]);
+
+      compareToExpected<number[]>(
+        expect,
+        expected,
+        results,
+        arraysOfOutcomesAreSame
+      );
+    });
   });
 
-  it("combines identical sets", () => {
-    const d2 = new RandomDevice<number>([
-      [1, new Fraction(1, 2)],
-      [2, new Fraction(1, 2)],
-    ]);
+  describe("roll", () => {
+    it("can roll a single random device", () => {
+      const d4 = new RandomDevice<number>([
+        [1, new Fraction(1, 4)],
+        [2, new Fraction(1, 4)],
+        [3, new Fraction(1, 4)],
+        [4, new Fraction(1, 4)],
+      ]);
 
-    const expected: SetWithOdds<any>[] = [
-      { set: [1, 1], odds: new Fraction(1, 4) },
-      { set: [1, 2], odds: new Fraction(1, 2) },
-      { set: [2, 2], odds: new Fraction(1, 4) },
-    ];
+      const expected = [
+        { value: 1, oddsOfValue: new Fraction(1, 4) },
+        { value: 2, oddsOfValue: new Fraction(1, 4) },
+        { value: 3, oddsOfValue: new Fraction(1, 4) },
+        { value: 4, oddsOfValue: new Fraction(1, 4) },
+      ];
 
-    const results: SetWithOdds<number>[] = odds([d2, d2]);
+      const results = roll<number, number>(d4, 1, sum, (a, b) => a === b);
+      compareToExpected<number>(expect, expected, results, (a, b) => a === b);
+    });
 
-    compareToExpected(expect, expected, results);
+    it("can roll several random devices", () => {
+      const d4 = new RandomDevice<number>([
+        [1, new Fraction(1, 4)],
+        [2, new Fraction(1, 4)],
+        [3, new Fraction(1, 4)],
+        [4, new Fraction(1, 4)],
+      ]);
+
+      const expected = [
+        { value: 2, oddsOfValue: new Fraction(1, 16) },
+        { value: 3, oddsOfValue: new Fraction(2, 16) },
+        { value: 4, oddsOfValue: new Fraction(3, 16) },
+        { value: 5, oddsOfValue: new Fraction(4, 16) },
+        { value: 6, oddsOfValue: new Fraction(3, 16) },
+        { value: 7, oddsOfValue: new Fraction(2, 16) },
+        { value: 8, oddsOfValue: new Fraction(1, 16) },
+      ];
+
+      const results = roll<number, number>(d4, 2, sum, (a, b) => a === b);
+      compareToExpected<number>(expect, expected, results, (a, b) => a === b);
+    });
   });
 });

@@ -1,21 +1,46 @@
-import { Fraction, odds as computeOdds } from "./math";
+import { cartesianProduct, roll, WithOdds } from "./math";
 import {
   AttackDie,
+  AttackResult,
   CampaignResult,
-  campaignResultCompareFn,
   DefenseDie,
-  toCampaignResult,
+  DefenseResult,
+  toAttackResult,
+  toDefenseResult,
 } from "./oath";
-import { replace } from "./utils";
 
 /**
- * A campaign result along with the odds of obtaining this particular result.
+ * Lists all possible results of an attack roll.
+ *
+ * @param {number} diceNumber
+ *   Number of attack (red) dice to roll.
+ * @returns {WithOdds<AttackResult>[]}
+ *   All possible results of rolling this number of attack dice.
  */
-export interface CampaignResultWithOdds {
-  /** The campaign result. */
-  result: CampaignResult;
-  /** The odds of obtaining this particular result. */
-  odds: Fraction;
+function rollAttack(diceNumber: number): WithOdds<AttackResult>[] {
+  return roll(
+    AttackDie,
+    diceNumber,
+    toAttackResult,
+    (a, b) => a.attack === b.attack && a.kill === b.kill
+  );
+}
+
+/**
+ * Lists all possible results of defense roll.
+ *
+ * @param {number} diceNumber
+ *   Number of defense (blue) dice to roll.
+ * @returns {WithOdds<DefenseResult>[]}
+ *   All possible results of rolling this number of defense dice.
+ */
+function rollDefense(diceNumber: number): WithOdds<DefenseResult>[] {
+  return roll(
+    DefenseDie,
+    diceNumber,
+    toDefenseResult,
+    (a, b) => a.defense === b.defense
+  );
 }
 
 /**
@@ -31,42 +56,25 @@ export interface CampaignResultWithOdds {
 export function rollCampaign(
   attackDice: number,
   defenseDice: number
-): CampaignResultWithOdds[] {
-  const raw: CampaignResultWithOdds[] = computeOdds([
-    ...Array(attackDice).fill(AttackDie),
-    ...Array(defenseDice).fill(DefenseDie),
-  ]).map(({ set, odds }) => ({
-    odds,
-    result: toCampaignResult(set),
-  }));
+): WithOdds<CampaignResult>[] {
+  const attackRoll = rollAttack(attackDice);
+  const defenseRoll = rollDefense(defenseDice);
 
-  const sameResultsCombined = raw.reduce(
-    (acc: CampaignResultWithOdds[], current: CampaignResultWithOdds) => {
-      if (acc.length === 0) {
-        return [current];
-      } else {
-        // Find an equivalent result
-        const matchingResultIndex = acc.findIndex(
-          ({ result }) => campaignResultCompareFn(result, current.result) === 0
-        );
-        if (matchingResultIndex > -1) {
-          // Update the existing result by adding the odds
-          const updatedResult = {
-            odds: acc[matchingResultIndex].odds.add(current.odds),
-            result: acc[matchingResultIndex].result,
-          };
+  const product = cartesianProduct<any>(attackRoll, defenseRoll);
 
-          return replace(acc, matchingResultIndex, updatedResult);
-        } else {
-          // Add the set
-          return [...acc, current];
-        }
-      }
-    },
-    []
+  return product.map((pair) =>
+    merge(pair as [WithOdds<AttackResult>, WithOdds<DefenseResult>])
   );
+}
 
-  return sameResultsCombined;
+function merge(
+  attackDefensePair: [WithOdds<AttackResult>, WithOdds<DefenseResult>]
+): WithOdds<CampaignResult> {
+  const [attack, defense] = attackDefensePair;
+  return {
+    oddsOfValue: attack.oddsOfValue.multiply(defense.oddsOfValue),
+    value: { ...attack.value, ...defense.value },
+  };
 }
 
 export { Fraction } from "./math";
