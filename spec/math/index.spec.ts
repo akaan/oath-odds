@@ -184,14 +184,19 @@ describe("math", () => {
         [4, new Fraction(1, 4)],
       ]);
 
-      const expected = [
+      const expected: WithOdds<number>[] = [
         { value: 1, oddsOfValue: new Fraction(1, 4) },
         { value: 2, oddsOfValue: new Fraction(1, 4) },
         { value: 3, oddsOfValue: new Fraction(1, 4) },
         { value: 4, oddsOfValue: new Fraction(1, 4) },
       ];
 
-      const results = roll<number, number>(d4, 1, sum, (a, b) => a === b);
+      const results: WithOdds<number>[] = roll<number, number>(
+        d4,
+        1,
+        sum,
+        (a, b) => a === b
+      );
       compareToExpected<number>(expect, expected, results, (a, b) => a === b);
     });
 
@@ -203,7 +208,7 @@ describe("math", () => {
         [4, new Fraction(1, 4)],
       ]);
 
-      const expected = [
+      const expected: WithOdds<number>[] = [
         { value: 2, oddsOfValue: new Fraction(1, 16) },
         { value: 3, oddsOfValue: new Fraction(2, 16) },
         { value: 4, oddsOfValue: new Fraction(3, 16) },
@@ -213,7 +218,12 @@ describe("math", () => {
         { value: 8, oddsOfValue: new Fraction(1, 16) },
       ];
 
-      const results = roll<number, number>(d4, 2, sum, (a, b) => a === b);
+      const results: WithOdds<number>[] = roll<number, number>(
+        d4,
+        2,
+        sum,
+        (a, b) => a === b
+      );
       compareToExpected<number>(expect, expected, results, (a, b) => a === b);
     });
   });

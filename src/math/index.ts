@@ -56,7 +56,7 @@ export function roll<O, R>(
   numberOfDevices: number,
   resultTransformationFn: (outcomes: O[]) => R,
   resultEqualFn: (a: R, b: R) => boolean
-) {
+): WithOdds<R>[] {
   const raw: WithOdds<R>[] = odds<O>([
     ...Array(numberOfDevices).fill(device),
   ]).map(({ value, oddsOfValue }) => ({
