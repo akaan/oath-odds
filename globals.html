@@ -82,15 +82,15 @@
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface"><a href="interfaces/campaignresult.html" class="tsd-kind-icon">Campaign<wbr>Result</a></li>
-								<li class="tsd-kind-interface"><a href="interfaces/campaignresultwithodds.html" class="tsd-kind-icon">Campaign<wbr>Result<wbr>With<wbr>Odds</a></li>
-								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/setwithodds.html" class="tsd-kind-icon">Set<wbr>With<wbr>Odds</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/attackresult.html" class="tsd-kind-icon">Attack<wbr>Result</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/defenseresult.html" class="tsd-kind-icon">Defense<wbr>Result</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/withodds.html" class="tsd-kind-icon">With<wbr>Odds</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias"><a href="globals.html#oathdieface" class="tsd-kind-icon">Oath<wbr>Die<wbr>Face</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#campaignresult" class="tsd-kind-icon">Campaign<wbr>Result</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -109,10 +109,15 @@
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#combinesetwithodds" class="tsd-kind-icon">combine<wbr>Set<wbr>With<wbr>Odds</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#flatten" class="tsd-kind-icon">flatten</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#gcd" class="tsd-kind-icon">gcd</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#odds" class="tsd-kind-icon">odds</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#merge" class="tsd-kind-icon">merge</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#odds" class="tsd-kind-icon">odds</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#replace" class="tsd-kind-icon">replace</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#roll" class="tsd-kind-icon">roll</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#rollattack" class="tsd-kind-icon">roll<wbr>Attack</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#rollcampaign" class="tsd-kind-icon">roll<wbr>Campaign</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#tocampaignresult" class="tsd-kind-icon">to<wbr>Campaign<wbr>Result</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#rolldefense" class="tsd-kind-icon">roll<wbr>Defense</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#toattackresult" class="tsd-kind-icon">to<wbr>Attack<wbr>Result</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#todefenseresult" class="tsd-kind-icon">to<wbr>Defense<wbr>Result</a></li>
 							</ul>
 						</section>
 					</div>
@@ -121,17 +126,17 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
-					<a name="oathdieface" class="tsd-anchor"></a>
-					<h3>Oath<wbr>Die<wbr>Face</h3>
-					<div class="tsd-signature tsd-kind-icon">Oath<wbr>Die<wbr>Face<span class="tsd-signature-symbol">:</span> <a href="enums/attackdieface.html" class="tsd-signature-type">AttackDieFace</a><span class="tsd-signature-symbol"> | </span><a href="enums/defensedieface.html" class="tsd-signature-type">DefenseDieFace</a></div>
+					<a name="campaignresult" class="tsd-anchor"></a>
+					<h3>Campaign<wbr>Result</h3>
+					<div class="tsd-signature tsd-kind-icon">Campaign<wbr>Result<span class="tsd-signature-symbol">:</span> <a href="interfaces/attackresult.html" class="tsd-signature-type">AttackResult</a><span class="tsd-signature-symbol"> &amp; </span><a href="interfaces/defenseresult.html" class="tsd-signature-type">DefenseResult</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/398a771/src/oath/index.ts#L7">oath/index.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/oath/CampaignResult.ts#L23">oath/CampaignResult.ts:23</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Either an attack or a defense die face.</p>
+							<p>Type to hold a campaign result.</p>
 						</div>
 					</div>
 				</section>
@@ -144,7 +149,7 @@
 					<div class="tsd-signature tsd-kind-icon">Attack<wbr>Die<span class="tsd-signature-symbol">:</span> <a href="classes/randomdevice.html" class="tsd-signature-type">RandomDevice</a><span class="tsd-signature-symbol">&lt;</span><a href="enums/attackdieface.html" class="tsd-signature-type">AttackDieFace</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new RandomDevice&lt;AttackDieFace&gt;([[AttackDieFace.HOLLOW_SWORD, new Fraction(3, 6)],[AttackDieFace.SWORD, new Fraction(2, 6)],[AttackDieFace.TWO_SWORDS_AND_SKULL, new Fraction(1, 6)],])</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/398a771/src/oath/index.ts#L10">oath/index.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/oath/index.ts#L7">oath/index.ts:7</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -159,7 +164,7 @@
 					<div class="tsd-signature tsd-kind-icon">Defense<wbr>Die<span class="tsd-signature-symbol">:</span> <a href="classes/randomdevice.html" class="tsd-signature-type">RandomDevice</a><span class="tsd-signature-symbol">&lt;</span><a href="enums/defensedieface.html" class="tsd-signature-type">DefenseDieFace</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new RandomDevice&lt;DefenseDieFace&gt;([[DefenseDieFace.BLANK, new Fraction(2, 6)],[DefenseDieFace.SHIELD, new Fraction(2, 6)],[DefenseDieFace.TWO_SHIELDS, new Fraction(1, 6)],[DefenseDieFace.DOUBLE, new Fraction(1, 6)],])</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/398a771/src/oath/index.ts#L17">oath/index.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/oath/index.ts#L41">oath/index.ts:41</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -181,7 +186,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/398a771/src/utils/arrays.ts#L27">utils/arrays.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/utils/arrays.ts#L27">utils/arrays.ts:27</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -222,13 +227,13 @@
 					<a name="campaignresultcomparefn" class="tsd-anchor"></a>
 					<h3>campaign<wbr>Result<wbr>Compare<wbr>Fn</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">campaign<wbr>Result<wbr>Compare<wbr>Fn<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="interfaces/campaignresult.html" class="tsd-signature-type">CampaignResult</a>, b<span class="tsd-signature-symbol">: </span><a href="interfaces/campaignresult.html" class="tsd-signature-type">CampaignResult</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">campaign<wbr>Result<wbr>Compare<wbr>Fn<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="globals.html#campaignresult" class="tsd-signature-type">CampaignResult</a>, b<span class="tsd-signature-symbol">: </span><a href="globals.html#campaignresult" class="tsd-signature-type">CampaignResult</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/398a771/src/oath/CampaignResult.ts#L28">oath/CampaignResult.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/oath/CampaignResult.ts#L38">oath/CampaignResult.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -244,13 +249,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>a: <a href="interfaces/campaignresult.html" class="tsd-signature-type">CampaignResult</a></h5>
+									<h5>a: <a href="globals.html#campaignresult" class="tsd-signature-type">CampaignResult</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>  The first campaign result.</p>
 									</div>
 								</li>
 								<li>
-									<h5>b: <a href="interfaces/campaignresult.html" class="tsd-signature-type">CampaignResult</a></h5>
+									<h5>b: <a href="globals.html#campaignresult" class="tsd-signature-type">CampaignResult</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>  The second campaign result.</p>
 									</div>
@@ -271,7 +276,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/398a771/src/math/combinatorics.ts#L17">math/combinatorics.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/math/combinatorics.ts#L17">math/combinatorics.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -304,13 +309,13 @@
 					<a name="combinesetwithodds" class="tsd-anchor"></a>
 					<h3>combine<wbr>Set<wbr>With<wbr>Odds</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">combine<wbr>Set<wbr>With<wbr>Odds&lt;O, P&gt;<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="interfaces/setwithodds.html" class="tsd-signature-type">SetWithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">&gt;</span>, second<span class="tsd-signature-symbol">: </span><a href="interfaces/setwithodds.html" class="tsd-signature-type">SetWithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/setwithodds.html" class="tsd-signature-type">SetWithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">combine<wbr>Set<wbr>With<wbr>Odds&lt;O, P&gt;<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>, second<span class="tsd-signature-symbol">: </span><a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/398a771/src/math/SetWithOdds.ts#L31">math/SetWithOdds.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/math/index.ts#L113">math/index.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -337,19 +342,19 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>first: <a href="interfaces/setwithodds.html" class="tsd-signature-type">SetWithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>first: <a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>  The first set to be combined.</p>
 									</div>
 								</li>
 								<li>
-									<h5>second: <a href="interfaces/setwithodds.html" class="tsd-signature-type">SetWithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>second: <a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>  The second set to be combined.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="interfaces/setwithodds.html" class="tsd-signature-type">SetWithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>  The result of combining the two sets.</p>
 						</li>
 					</ul>
@@ -364,7 +369,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/398a771/src/utils/arrays.ts#L11">utils/arrays.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/utils/arrays.ts#L11">utils/arrays.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -405,7 +410,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/398a771/src/math/Fraction.ts#L108">math/Fraction.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/math/Fraction.ts#L108">math/Fraction.ts:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -434,16 +439,39 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="odds" class="tsd-anchor"></a>
-					<h3>odds</h3>
+					<a name="merge" class="tsd-anchor"></a>
+					<h3>merge</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">odds<span class="tsd-signature-symbol">(</span>devices<span class="tsd-signature-symbol">: </span><a href="classes/randomdevice.html" class="tsd-signature-type">RandomDevice</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/setwithodds.html" class="tsd-signature-type">SetWithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">merge<span class="tsd-signature-symbol">(</span>attackDefensePair<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/attackresult.html" class="tsd-signature-type">AttackResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/defenseresult.html" class="tsd-signature-type">DefenseResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#campaignresult" class="tsd-signature-type">CampaignResult</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/398a771/src/math/index.ts#L16">math/index.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/index.ts#L70">index.ts:70</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>attackDefensePair: <span class="tsd-signature-symbol">[</span><a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/attackresult.html" class="tsd-signature-type">AttackResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/defenseresult.html" class="tsd-signature-type">DefenseResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#campaignresult" class="tsd-signature-type">CampaignResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="odds" class="tsd-anchor"></a>
+					<h3>odds</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">odds&lt;T&gt;<span class="tsd-signature-symbol">(</span>devices<span class="tsd-signature-symbol">: </span><a href="classes/randomdevice.html" class="tsd-signature-type">RandomDevice</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/math/index.ts#L16">math/index.ts:16</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -452,16 +480,22 @@
 									with the odds of obtaining this particular set.</p>
 								</div>
 							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>devices: <a href="classes/randomdevice.html" class="tsd-signature-type">RandomDevice</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>devices: <a href="classes/randomdevice.html" class="tsd-signature-type">RandomDevice</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>  The list of random devices from which to generate possible sets.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="interfaces/setwithodds.html" class="tsd-signature-type">SetWithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
 							<p>  All possible sets that can be obtainded from this lsit of random devices
 							along with the odds of obtaining this particular set.</p>
 						</li>
@@ -477,7 +511,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/398a771/src/utils/arrays.ts#L59">utils/arrays.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/utils/arrays.ts#L59">utils/arrays.ts:59</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -520,17 +554,129 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="rollcampaign" class="tsd-anchor"></a>
-					<h3>roll<wbr>Campaign</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">roll<wbr>Campaign<span class="tsd-signature-symbol">(</span>attackDice<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, defenseDice<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/campaignresultwithodds.html" class="tsd-signature-type">CampaignResultWithOdds</a><span class="tsd-signature-symbol">[]</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="roll" class="tsd-anchor"></a>
+					<h3>roll</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">roll&lt;O, R&gt;<span class="tsd-signature-symbol">(</span>device<span class="tsd-signature-symbol">: </span><a href="classes/randomdevice.html" class="tsd-signature-type">RandomDevice</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">&gt;</span>, numberOfDevices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, resultTransformationFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>outcomes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">R</span>, resultEqualFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/398a771/src/index.ts#L31">index.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/math/index.ts#L54">math/index.ts:54</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>O</h4>
+								</li>
+								<li>
+									<h4>R</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>device: <a href="classes/randomdevice.html" class="tsd-signature-type">RandomDevice</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>numberOfDevices: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>resultTransformationFn: <span class="tsd-signature-symbol">(</span>outcomes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">R</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>outcomes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>outcomes: <span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">[]</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">R</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>resultEqualFn: <span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>a: <span class="tsd-signature-type">R</span></h5>
+														</li>
+														<li>
+															<h5>b: <span class="tsd-signature-type">R</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="rollattack" class="tsd-anchor"></a>
+					<h3>roll<wbr>Attack</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">roll<wbr>Attack<span class="tsd-signature-symbol">(</span>diceNumber<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/attackresult.html" class="tsd-signature-type">AttackResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/index.ts#L20">index.ts:20</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Lists all possible results of an attack roll.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>diceNumber: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>  Number of attack (red) dice to roll.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/attackresult.html" class="tsd-signature-type">AttackResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>  All possible results of rolling this number of attack dice.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="rollcampaign" class="tsd-anchor"></a>
+					<h3>roll<wbr>Campaign</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">roll<wbr>Campaign<span class="tsd-signature-symbol">(</span>attackDice<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, defenseDice<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#campaignresult" class="tsd-signature-type">CampaignResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/index.ts#L56">index.ts:56</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -553,40 +699,104 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="interfaces/campaignresultwithodds.html" class="tsd-signature-type">CampaignResultWithOdds</a><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#campaignresult" class="tsd-signature-type">CampaignResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
 							<p>  All possible results for this campaign along with their odds.</p>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="tocampaignresult" class="tsd-anchor"></a>
-					<h3>to<wbr>Campaign<wbr>Result</h3>
+					<a name="rolldefense" class="tsd-anchor"></a>
+					<h3>roll<wbr>Defense</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">to<wbr>Campaign<wbr>Result<span class="tsd-signature-symbol">(</span>faces<span class="tsd-signature-symbol">: </span><a href="globals.html#oathdieface" class="tsd-signature-type">OathDieFace</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/campaignresult.html" class="tsd-signature-type">CampaignResult</a></li>
+						<li class="tsd-signature tsd-kind-icon">roll<wbr>Defense<span class="tsd-signature-symbol">(</span>diceNumber<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/defenseresult.html" class="tsd-signature-type">DefenseResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/398a771/src/oath/index.ts#L32">oath/index.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/index.ts#L37">index.ts:37</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Sums up a set of attack and defense die faces into a campaign result.</p>
+									<p>Lists all possible results of defense roll.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>faces: <a href="globals.html#oathdieface" class="tsd-signature-type">OathDieFace</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>diceNumber: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>  A set of attack and defense die faces.</p>
+										<p>  Number of defense (blue) dice to roll.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="interfaces/campaignresult.html" class="tsd-signature-type">CampaignResult</a></h4>
-							<p>  The campaign result after adding all die faces.</p>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/withodds.html" class="tsd-signature-type">WithOdds</a><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/defenseresult.html" class="tsd-signature-type">DefenseResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>  All possible results of rolling this number of defense dice.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="toattackresult" class="tsd-anchor"></a>
+					<h3>to<wbr>Attack<wbr>Result</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Attack<wbr>Result<span class="tsd-signature-symbol">(</span>faces<span class="tsd-signature-symbol">: </span><a href="enums/attackdieface.html" class="tsd-signature-type">AttackDieFace</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/attackresult.html" class="tsd-signature-type">AttackResult</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/oath/index.ts#L21">oath/index.ts:21</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sums up a set of attack die faces into an attack roll result.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>faces: <a href="enums/attackdieface.html" class="tsd-signature-type">AttackDieFace</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>  A set of attack die faces.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/attackresult.html" class="tsd-signature-type">AttackResult</a></h4>
+							<p>  The attack roll result after adding all die faces.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="todefenseresult" class="tsd-anchor"></a>
+					<h3>to<wbr>Defense<wbr>Result</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Defense<wbr>Result<span class="tsd-signature-symbol">(</span>faces<span class="tsd-signature-symbol">: </span><a href="enums/defensedieface.html" class="tsd-signature-type">DefenseDieFace</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/defenseresult.html" class="tsd-signature-type">DefenseResult</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/74f61ea/src/oath/index.ts#L56">oath/index.ts:56</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sums up a set of defense die faces into a defense roll result.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>faces: <a href="enums/defensedieface.html" class="tsd-signature-type">DefenseDieFace</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>  A set of defense die faces.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/defenseresult.html" class="tsd-signature-type">DefenseResult</a></h4>
+							<p>  The defense roll result after adding all die faces.</p>
 						</li>
 					</ul>
 				</section>
@@ -615,16 +825,16 @@
 						<a href="classes/randomdevice.html" class="tsd-kind-icon">Random<wbr>Device</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/campaignresult.html" class="tsd-kind-icon">Campaign<wbr>Result</a>
+						<a href="interfaces/attackresult.html" class="tsd-kind-icon">Attack<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/campaignresultwithodds.html" class="tsd-kind-icon">Campaign<wbr>Result<wbr>With<wbr>Odds</a>
+						<a href="interfaces/defenseresult.html" class="tsd-kind-icon">Defense<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/setwithodds.html" class="tsd-kind-icon">Set<wbr>With<wbr>Odds</a>
+						<a href="interfaces/withodds.html" class="tsd-kind-icon">With<wbr>Odds</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#oathdieface" class="tsd-kind-icon">Oath<wbr>Die<wbr>Face</a>
+						<a href="globals.html#campaignresult" class="tsd-kind-icon">Campaign<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#attackdie" class="tsd-kind-icon">Attack<wbr>Die</a>
@@ -651,16 +861,31 @@
 						<a href="globals.html#gcd" class="tsd-kind-icon">gcd</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#merge" class="tsd-kind-icon">merge</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#odds" class="tsd-kind-icon">odds</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#replace" class="tsd-kind-icon">replace</a>
 					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#roll" class="tsd-kind-icon">roll</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#rollattack" class="tsd-kind-icon">roll<wbr>Attack</a>
+					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#rollcampaign" class="tsd-kind-icon">roll<wbr>Campaign</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#tocampaignresult" class="tsd-kind-icon">to<wbr>Campaign<wbr>Result</a>
+						<a href="globals.html#rolldefense" class="tsd-kind-icon">roll<wbr>Defense</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#toattackresult" class="tsd-kind-icon">to<wbr>Attack<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#todefenseresult" class="tsd-kind-icon">to<wbr>Defense<wbr>Result</a>
 					</li>
 				</ul>
 			</nav>
