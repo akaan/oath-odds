@@ -9,42 +9,7 @@ import {
   roll,
   WithOdds,
 } from "../../src/math";
-import { arrayEquals } from "../../src/utils";
-
-function compareToExpected<Outcome>(
-  expectFn: typeof expect,
-  expected: WithOdds<Outcome>[],
-  actual: WithOdds<Outcome>[],
-  valuesAreSameFn: (a: Outcome, b: Outcome) => boolean
-): void {
-  expectFn(actual.length, "Sets have different lengths").to.equal(
-    expected.length
-  );
-
-  if (actual.length === expected.length) {
-    for (const actualResult of actual) {
-      const expectedResults = expected.filter((result) =>
-        valuesAreSameFn(result.value, actualResult.value)
-      );
-
-      expectFn(
-        expectedResults.length,
-        "There should be exactly 1 set with the same outcomes"
-      ).to.equal(1);
-
-      if (expectedResults.length === 1) {
-        expectFn(
-          actualResult.oddsOfValue.sameAs(expectedResults[0].oddsOfValue),
-          `Result with set ${actualResult.value} does not have the same odds`
-        ).to.be.true;
-      }
-    }
-  }
-}
-
-function arraysOfOutcomesAreSame<Outcome>(a: Outcome[], b: Outcome[]): boolean {
-  return arrayEquals(a.sort(), b.sort());
-}
+import { arraysOfOutcomesAreSame, compareToExpected } from "../support";
 
 function sum(numbers: number[]): number {
   return numbers.reduce((x, y) => x + y);

@@ -1,4 +1,4 @@
-import { cartesianProduct, roll, WithOdds } from "./math";
+import { cartesianProduct, Fraction, roll, WithOdds } from "./math";
 import {
   AttackDie,
   AttackResult,
@@ -8,6 +8,7 @@ import {
   toAttackResult,
   toDefenseResult,
 } from "./oath";
+import { replace } from "./utils";
 
 /**
  * Lists all possible results of an attack roll.
@@ -75,6 +76,111 @@ function merge(
     oddsOfValue: attack.oddsOfValue.multiply(defense.oddsOfValue),
     value: { ...attack.value, ...defense.value },
   };
+}
+
+/**
+ * Type to hold information about a campaign success.
+ */
+export interface CampaignSuccess {
+  /** Remaining warbands in attacking force after warbands have been killed
+   * from the dice roll and sacrificed.
+   */
+  remainingWarbands: number;
+  /** Odds of this particular campaign success. */
+  odds: Fraction;
+}
+
+/**
+ * Computes the remaining warbands in attacking force by applying the kills
+ * from the dice roll and sacrificing the number of warbands needed to succeed.
+ * If the result is negative, it means by this campaign can't be a success (not
+ * enough warbands to sacrifice).
+ *
+ * @param {CampaignResult} result
+ *   The campaign result.
+ * @param {number} attackingForceWarbands
+ *   The number of warbands in attacking force.
+ * @param {number} defendingForceWarbands
+ *   The number of warbands in defending force.
+ * @returns {number}
+ *   The remaining warbands.
+ */
+function remainingWarbandsAfterSacrifice(
+  result: CampaignResult,
+  attackingForceWarbands: number,
+  defendingForceWarbands: number
+): number {
+  return (
+    result.attack +
+    attackingForceWarbands -
+    result.kill -
+    result.defense -
+    defendingForceWarbands -
+    1
+  );
+}
+
+export function computeCampaignSuccess(
+  attackDice: number,
+  attackingForceWarbands: number,
+  defenseDice: number,
+  defendingForceWarbands: number
+): CampaignSuccess[] {
+  const possibleResults = rollCampaign(attackDice, defenseDice);
+
+  const successes = possibleResults.filter(
+    (result) =>
+      remainingWarbandsAfterSacrifice(
+        result.value,
+        attackingForceWarbands,
+        defendingForceWarbands
+      ) >= 0
+  );
+
+  const groupedByRemainingWarbands: CampaignSuccess[] = successes.reduce(
+    (acc: CampaignSuccess[], result: WithOdds<CampaignResult>) => {
+      const remainingWarbands = remainingWarbandsAfterSacrifice(
+        result.value,
+        attackingForceWarbands,
+        defendingForceWarbands
+      );
+
+      if (acc.length === 0) {
+        return [
+          {
+            odds: result.oddsOfValue,
+            remainingWarbands,
+          },
+        ];
+      } else {
+        // Find an equivalent set
+        const matchingIndex = acc.findIndex(
+          (item) => item.remainingWarbands === remainingWarbands
+        );
+        if (matchingIndex > -1) {
+          // Update the existing set by adding the odds
+          const updated = {
+            odds: acc[matchingIndex].odds.add(result.oddsOfValue),
+            remainingWarbands: acc[matchingIndex].remainingWarbands,
+          };
+
+          return replace(acc, matchingIndex, updated);
+        } else {
+          // Add the set
+          return [
+            ...acc,
+            {
+              odds: result.oddsOfValue,
+              remainingWarbands,
+            },
+          ];
+        }
+      }
+    },
+    []
+  );
+
+  return groupedByRemainingWarbands;
 }
 
 export { Fraction } from "./math";

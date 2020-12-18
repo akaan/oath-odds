@@ -1,53 +1,17 @@
 // tslint:disable:no-unused-expression
 import { expect } from "chai";
 import "mocha";
-import { Fraction, rollCampaign } from "../src";
+import { computeCampaignSuccess, Fraction, rollCampaign } from "../src";
+import { WithOdds } from "../src/math/WithOdds";
 import {
   CampaignResult,
   campaignResultCompareFn,
 } from "../src/oath/CampaignResult";
-import { WithOdds } from "../src/math/WithOdds";
-
-function printCampaignResult(result: CampaignResult): string {
-  return `{ attack: ${result.attack}, defense: ${result.defense}, kill: ${result.kill} }`;
-}
-
-function compareToExpected(
-  expectFn: typeof expect,
-  expected: WithOdds<CampaignResult>[],
-  actual: WithOdds<CampaignResult>[]
-): void {
-  expectFn(actual.length, "Sets have different lengths").to.equal(
-    expected.length
-  );
-
-  if (actual.length === expected.length) {
-    for (const actualResult of actual) {
-      const expectedResults = expected.filter(
-        (result) =>
-          campaignResultCompareFn(result.value, actualResult.value) === 0
-      );
-
-      expectFn(
-        expectedResults.length,
-        "There should be exactly 1 set with the same campaign result"
-      ).to.equal(1);
-
-      if (expectedResults.length === 1) {
-        expectFn(
-          actualResult.oddsOfValue.sameAs(expectedResults[0].oddsOfValue),
-          `Result with campaign result ${printCampaignResult(
-            actualResult.value
-          )} does not have the same odds: expected = ${expectedResults[0].oddsOfValue.toString()}, actual = ${actualResult.oddsOfValue.toString()}`
-        ).to.be.true;
-      }
-    }
-  }
-}
+import { compareToExpected } from "./support";
 
 describe("OathOdds", () => {
   describe("rollCampaign", () => {
-    it("", () => {
+    it("returns all possible result of the campaign along with their odds", () => {
       const expected = [
         {
           oddsOfValue: new Fraction(1, 12),
@@ -87,7 +51,33 @@ describe("OathOdds", () => {
         },
       ];
       const results: WithOdds<CampaignResult>[] = rollCampaign(1, 1);
-      compareToExpected(expect, expected, results);
+      compareToExpected<CampaignResult>(
+        expect,
+        expected,
+        results,
+        (a, b) => campaignResultCompareFn(a, b) === 0
+      );
     });
+  });
+
+  describe("computeCampaignSuccess", () => {
+    const results = computeCampaignSuccess(3, 3, 2, 2);
+    expect(results).to.have.length(4);
+
+    const withZero = results.filter((i) => i.remainingWarbands === 0);
+    expect(withZero).to.have.length(1);
+    expect(withZero[0].odds.sameAs(new Fraction(7, 24))).to.be.true;
+
+    const withOne = results.filter((i) => i.remainingWarbands === 1);
+    expect(withOne).to.have.length(1);
+    expect(withOne[0].odds.sameAs(new Fraction(23, 96))).to.be.true;
+
+    const withTwo = results.filter((i) => i.remainingWarbands === 2);
+    expect(withTwo).to.have.length(1);
+    expect(withTwo[0].odds.sameAs(new Fraction(31, 144))).to.be.true;
+
+    const withThree = results.filter((i) => i.remainingWarbands === 3);
+    expect(withThree).to.have.length(1);
+    expect(withThree[0].odds.sameAs(new Fraction(1, 32))).to.be.true;
   });
 });
