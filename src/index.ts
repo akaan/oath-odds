@@ -180,7 +180,13 @@ export function computeCampaignSuccess(
     []
   );
 
-  return groupedByRemainingWarbands;
+  return groupedByRemainingWarbands.sort((a, b) =>
+    a.remainingWarbands < b.remainingWarbands
+      ? -1
+      : a.remainingWarbands > b.remainingWarbands
+      ? 1
+      : 0
+  );
 }
 
 export { Fraction } from "./math";

@@ -61,23 +61,31 @@ describe("OathOdds", () => {
   });
 
   describe("computeCampaignSuccess", () => {
-    const results = computeCampaignSuccess(3, 3, 2, 2);
-    expect(results).to.have.length(4);
+    it("returns remaining warbands along with odds", () => {
+      const results = computeCampaignSuccess(3, 3, 2, 2);
+      expect(results).to.have.length(4);
 
-    const withZero = results.filter((i) => i.remainingWarbands === 0);
-    expect(withZero).to.have.length(1);
-    expect(withZero[0].odds.sameAs(new Fraction(7, 24))).to.be.true;
+      const withZero = results.filter((i) => i.remainingWarbands === 0);
+      expect(withZero).to.have.length(1);
+      expect(withZero[0].odds.sameAs(new Fraction(7, 24))).to.be.true;
 
-    const withOne = results.filter((i) => i.remainingWarbands === 1);
-    expect(withOne).to.have.length(1);
-    expect(withOne[0].odds.sameAs(new Fraction(23, 96))).to.be.true;
+      const withOne = results.filter((i) => i.remainingWarbands === 1);
+      expect(withOne).to.have.length(1);
+      expect(withOne[0].odds.sameAs(new Fraction(23, 96))).to.be.true;
 
-    const withTwo = results.filter((i) => i.remainingWarbands === 2);
-    expect(withTwo).to.have.length(1);
-    expect(withTwo[0].odds.sameAs(new Fraction(31, 144))).to.be.true;
+      const withTwo = results.filter((i) => i.remainingWarbands === 2);
+      expect(withTwo).to.have.length(1);
+      expect(withTwo[0].odds.sameAs(new Fraction(31, 144))).to.be.true;
 
-    const withThree = results.filter((i) => i.remainingWarbands === 3);
-    expect(withThree).to.have.length(1);
-    expect(withThree[0].odds.sameAs(new Fraction(1, 32))).to.be.true;
+      const withThree = results.filter((i) => i.remainingWarbands === 3);
+      expect(withThree).to.have.length(1);
+      expect(withThree[0].odds.sameAs(new Fraction(1, 32))).to.be.true;
+    });
+
+    it("returns results sorted by remaining warbands ascending", () => {
+      expect(
+        computeCampaignSuccess(3, 3, 2, 2).map((i) => i.remainingWarbands)
+      ).to.deep.equal([0, 1, 2, 3]);
+    });
   });
 });
