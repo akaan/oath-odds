@@ -83,6 +83,7 @@
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface"><a href="interfaces/attackresult.html" class="tsd-kind-icon">Attack<wbr>Result</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/campaignsuccess.html" class="tsd-kind-icon">Campaign<wbr>Success</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/defenseresult.html" class="tsd-kind-icon">Defense<wbr>Result</a></li>
 								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/withodds.html" class="tsd-kind-icon">With<wbr>Odds</a></li>
 							</ul>
@@ -107,10 +108,12 @@
 								<li class="tsd-kind-function"><a href="globals.html#campaignresultcomparefn" class="tsd-kind-icon">campaign<wbr>Result<wbr>Compare<wbr>Fn</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#cartesianproduct" class="tsd-kind-icon">cartesian<wbr>Product</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#combinesetwithodds" class="tsd-kind-icon">combine<wbr>Set<wbr>With<wbr>Odds</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#computecampaignsuccess" class="tsd-kind-icon">compute<wbr>Campaign<wbr>Success</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#flatten" class="tsd-kind-icon">flatten</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#gcd" class="tsd-kind-icon">gcd</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#merge" class="tsd-kind-icon">merge</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#odds" class="tsd-kind-icon">odds</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#remainingwarbandsaftersacrifice" class="tsd-kind-icon">remaining<wbr>Warbands<wbr>After<wbr>Sacrifice</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#replace" class="tsd-kind-icon">replace</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#roll" class="tsd-kind-icon">roll</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#rollattack" class="tsd-kind-icon">roll<wbr>Attack</a></li>
@@ -131,7 +134,7 @@
 					<div class="tsd-signature tsd-kind-icon">Campaign<wbr>Result<span class="tsd-signature-symbol">:</span> <a href="interfaces/attackresult.html" class="tsd-signature-type">AttackResult</a><span class="tsd-signature-symbol"> &amp; </span><a href="interfaces/defenseresult.html" class="tsd-signature-type">DefenseResult</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/oath/CampaignResult.ts#L23">oath/CampaignResult.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/oath/CampaignResult.ts#L23">oath/CampaignResult.ts:23</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -149,7 +152,7 @@
 					<div class="tsd-signature tsd-kind-icon">Attack<wbr>Die<span class="tsd-signature-symbol">:</span> <a href="classes/randomdevice.html" class="tsd-signature-type">RandomDevice</a><span class="tsd-signature-symbol">&lt;</span><a href="enums/attackdieface.html" class="tsd-signature-type">AttackDieFace</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new RandomDevice&lt;AttackDieFace&gt;([[AttackDieFace.HOLLOW_SWORD, new Fraction(3, 6)],[AttackDieFace.SWORD, new Fraction(2, 6)],[AttackDieFace.TWO_SWORDS_AND_SKULL, new Fraction(1, 6)],])</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/oath/index.ts#L7">oath/index.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/oath/index.ts#L7">oath/index.ts:7</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -164,7 +167,7 @@
 					<div class="tsd-signature tsd-kind-icon">Defense<wbr>Die<span class="tsd-signature-symbol">:</span> <a href="classes/randomdevice.html" class="tsd-signature-type">RandomDevice</a><span class="tsd-signature-symbol">&lt;</span><a href="enums/defensedieface.html" class="tsd-signature-type">DefenseDieFace</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new RandomDevice&lt;DefenseDieFace&gt;([[DefenseDieFace.BLANK, new Fraction(2, 6)],[DefenseDieFace.SHIELD, new Fraction(2, 6)],[DefenseDieFace.TWO_SHIELDS, new Fraction(1, 6)],[DefenseDieFace.DOUBLE, new Fraction(1, 6)],])</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/oath/index.ts#L41">oath/index.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/oath/index.ts#L41">oath/index.ts:41</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -186,7 +189,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/utils/arrays.ts#L27">utils/arrays.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/utils/arrays.ts#L27">utils/arrays.ts:27</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -233,7 +236,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/oath/CampaignResult.ts#L38">oath/CampaignResult.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/oath/CampaignResult.ts#L38">oath/CampaignResult.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -276,7 +279,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/math/combinatorics.ts#L17">math/combinatorics.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/math/combinatorics.ts#L17">math/combinatorics.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -315,7 +318,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/math/index.ts#L113">math/index.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/math/index.ts#L113">math/index.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -359,6 +362,38 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="computecampaignsuccess" class="tsd-anchor"></a>
+					<h3>compute<wbr>Campaign<wbr>Success</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">compute<wbr>Campaign<wbr>Success<span class="tsd-signature-symbol">(</span>attackDice<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, attackingForceWarbands<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, defenseDice<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, defendingForceWarbands<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/campaignsuccess.html" class="tsd-signature-type">CampaignSuccess</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/index.ts#L123">index.ts:123</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>attackDice: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>attackingForceWarbands: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>defenseDice: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>defendingForceWarbands: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/campaignsuccess.html" class="tsd-signature-type">CampaignSuccess</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
 					<a name="flatten" class="tsd-anchor"></a>
 					<h3>flatten</h3>
@@ -369,7 +404,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/utils/arrays.ts#L11">utils/arrays.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/utils/arrays.ts#L11">utils/arrays.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -410,7 +445,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/math/Fraction.ts#L108">math/Fraction.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/math/Fraction.ts#L108">math/Fraction.ts:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -448,7 +483,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/index.ts#L70">index.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/index.ts#L71">index.ts:71</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -471,7 +506,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/math/index.ts#L16">math/index.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/math/index.ts#L16">math/index.ts:16</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -501,6 +536,53 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="remainingwarbandsaftersacrifice" class="tsd-anchor"></a>
+					<h3>remaining<wbr>Warbands<wbr>After<wbr>Sacrifice</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">remaining<wbr>Warbands<wbr>After<wbr>Sacrifice<span class="tsd-signature-symbol">(</span>result<span class="tsd-signature-symbol">: </span><a href="globals.html#campaignresult" class="tsd-signature-type">CampaignResult</a>, attackingForceWarbands<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, defendingForceWarbands<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/index.ts#L108">index.ts:108</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Computes the remaining warbands in attacking force by applying the kills
+										from the dice roll and sacrificing the number of warbands needed to succeed.
+										If the result is negative, it means by this campaign can&#39;t be a success (not
+									enough warbands to sacrifice).</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>result: <a href="globals.html#campaignresult" class="tsd-signature-type">CampaignResult</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>  The campaign result.</p>
+									</div>
+								</li>
+								<li>
+									<h5>attackingForceWarbands: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>  The number of warbands in attacking force.</p>
+									</div>
+								</li>
+								<li>
+									<h5>defendingForceWarbands: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>  The number of warbands in defending force.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>  The remaining warbands.</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
 					<a name="replace" class="tsd-anchor"></a>
 					<h3>replace</h3>
@@ -511,7 +593,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/utils/arrays.ts#L59">utils/arrays.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/utils/arrays.ts#L59">utils/arrays.ts:59</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -564,7 +646,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/math/index.ts#L54">math/index.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/math/index.ts#L54">math/index.ts:54</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -644,7 +726,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/index.ts#L20">index.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/index.ts#L21">index.ts:21</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -676,7 +758,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/index.ts#L56">index.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/index.ts#L57">index.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -714,7 +796,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/index.ts#L37">index.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/index.ts#L38">index.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -746,7 +828,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/oath/index.ts#L21">oath/index.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/oath/index.ts#L21">oath/index.ts:21</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -778,7 +860,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/1b40207/src/oath/index.ts#L56">oath/index.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/akaan/oath-odds/blob/2efcecd/src/oath/index.ts#L56">oath/index.ts:56</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -828,6 +910,9 @@
 						<a href="interfaces/attackresult.html" class="tsd-kind-icon">Attack<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/campaignsuccess.html" class="tsd-kind-icon">Campaign<wbr>Success</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/defenseresult.html" class="tsd-kind-icon">Defense<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
@@ -854,6 +939,9 @@
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#combinesetwithodds" class="tsd-kind-icon">combine<wbr>Set<wbr>With<wbr>Odds</a>
 					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#computecampaignsuccess" class="tsd-kind-icon">compute<wbr>Campaign<wbr>Success</a>
+					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#flatten" class="tsd-kind-icon">flatten</a>
 					</li>
@@ -865,6 +953,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#odds" class="tsd-kind-icon">odds</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#remainingwarbandsaftersacrifice" class="tsd-kind-icon">remaining<wbr>Warbands<wbr>After<wbr>Sacrifice</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#replace" class="tsd-kind-icon">replace</a>
