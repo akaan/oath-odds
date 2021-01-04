@@ -102,22 +102,29 @@ export interface CampaignSuccess {
  *   The number of warbands in attacking force.
  * @param {number} defendingForceWarbands
  *   The number of warbands in defending force.
- * @returns {number}
- *   The remaining warbands.
+ * @returns {number | null}
+ *   The remaining warbands or null if the campaign is a loss.
  */
 function remainingWarbandsAfterSacrifice(
   result: CampaignResult,
   attackingForceWarbands: number,
   defendingForceWarbands: number
-): number {
-  return (
-    result.attack +
-    attackingForceWarbands -
-    result.kill -
-    result.defense -
-    defendingForceWarbands -
-    1
-  );
+): number | null {
+  const warbandsAfterKill = attackingForceWarbands - result.kill;
+
+  const attackVsDefense =
+    result.attack - result.defense - defendingForceWarbands;
+
+  if (attackVsDefense > 0) {
+    return warbandsAfterKill;
+  } else {
+    const warbandsToSacrifice = 1 - attackVsDefense;
+    if (warbandsToSacrifice > warbandsAfterKill) {
+      return null;
+    } else {
+      return warbandsAfterKill - warbandsToSacrifice;
+    }
+  }
 }
 
 export function computeCampaignSuccess(
@@ -134,7 +141,7 @@ export function computeCampaignSuccess(
         result.value,
         attackingForceWarbands,
         defendingForceWarbands
-      ) >= 0
+      ) !== null
   );
 
   const groupedByRemainingWarbands: CampaignSuccess[] = successes.reduce(

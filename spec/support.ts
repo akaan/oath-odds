@@ -1,7 +1,28 @@
 // tslint:disable:no-unused-expression
-import { expect } from "chai";
+import { Assertion, expect } from "chai";
+import { Fraction } from "../src/math/Fraction";
 import { WithOdds } from "../src/math/WithOdds";
 import { arrayEquals } from "../src/utils";
+
+Assertion.addMethod("sameFractionAs", function (expectedFraction: Fraction) {
+  const actualFraction = this._obj as Fraction;
+  this.assert(
+    actualFraction.sameAs(expectedFraction),
+    `expected ${expectedFraction.toString()} but got ${actualFraction.toString()}`,
+    `not expected ${expectedFraction.toString()} but got ${actualFraction.toString()}`,
+    expectedFraction,
+    actualFraction,
+    false
+  );
+});
+
+declare global {
+  export namespace Chai {
+    interface Assertion {
+      sameFractionAs(expectedFraction: Fraction): void;
+    }
+  }
+}
 
 export function arraysOfOutcomesAreSame<Outcome>(
   a: Outcome[],
