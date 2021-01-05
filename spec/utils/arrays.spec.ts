@@ -11,6 +11,15 @@ describe("utils", () => {
   });
 
   describe("arrayEquals", () => {
+    it("returns false if comparing to something else than an array", () => {
+      expect(arrayEquals("thing" as any, [1, 2])).to.be.false;
+      expect(arrayEquals([1, 2], "thing" as any)).to.be.false;
+    });
+
+    it("returns false if the arrays are not of the same length", () => {
+      expect(arrayEquals([1, 2, 3], [1, 2, 3, 4])).to.be.false;
+    });
+
     it("returns true if the arrays contain the same values in the same order", () => {
       expect(arrayEquals([1, 2, 3], [1, 2, 3])).to.be.true;
     });
