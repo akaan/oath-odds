@@ -106,6 +106,12 @@ describe("Oath domain model", () => {
 
       expect(result).to.deep.equal({ attack: 5, kill: 1 });
     });
+
+    it("throws an error when given an unknown die face", () => {
+      expect(() => {
+        toAttackResult(["unknown" as any]);
+      }).to.throw();
+    });
   });
 
   describe("toDefenseResult", () => {
@@ -122,6 +128,12 @@ describe("Oath domain model", () => {
       const result = toDefenseResult(rolled);
 
       expect(result).to.deep.equal({ defense: 12 });
+    });
+
+    it("throws an error when given an unknown die face", () => {
+      expect(() => {
+        toDefenseResult(["unknown" as any]);
+      }).to.throw();
     });
   });
 });

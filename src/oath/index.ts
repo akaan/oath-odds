@@ -29,7 +29,7 @@ export function toAttackResult(faces: AttackDieFace[]): AttackResult {
         case AttackDieFace.TWO_SWORDS_AND_SKULL:
           return { ...acc, attack: acc.attack + 2, kill: acc.kill + 1 };
         default:
-          return acc;
+          throw new Error(`Unknown die face ${face}`);
       }
     },
     { attack: 0, kill: 0 }
@@ -66,7 +66,7 @@ export function toDefenseResult(faces: DefenseDieFace[]): DefenseResult {
         case DefenseDieFace.DOUBLE:
           return { ...acc, defense: acc.defense * 2 };
         default:
-          return acc;
+          throw new Error(`Unknown die face ${face}`);
       }
     },
     { defense: 0 }
