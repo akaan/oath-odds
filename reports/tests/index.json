@@ -1,14 +1,14 @@
 {
   "stats": {
     "suites": 22,
-    "tests": 35,
-    "passes": 35,
+    "tests": 39,
+    "passes": 39,
     "pending": 0,
     "failures": 0,
-    "start": "2021-01-04T14:19:57.455Z",
-    "end": "2021-01-04T14:19:57.488Z",
-    "duration": 33,
-    "testsRegistered": 35,
+    "start": "2021-01-08T13:34:30.774Z",
+    "end": "2021-01-08T13:34:30.832Z",
+    "duration": 58,
+    "testsRegistered": 39,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "6974e654-c348-4c44-81d3-47cf56d89000",
+      "uuid": "9142976f-a70f-44c2-adae-f51911afd8c2",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "df7d617f-9b79-4b2d-9631-fad10ce313ac",
+          "uuid": "0cf67da7-3a13-471c-af53-aaad2a34e439",
           "title": "exports",
           "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/exports.spec.ts",
           "file": "/spec/exports.spec.ts",
@@ -47,15 +47,15 @@
               "context": null,
               "code": "chai_1.expect(OathOdds.rollCampaign).to.exist;",
               "err": {},
-              "uuid": "9bee150e-6105-4365-baf1-22fb8483a06a",
-              "parentUUID": "df7d617f-9b79-4b2d-9631-fad10ce313ac",
+              "uuid": "68e589db-b398-408c-b1f6-8d2bcf25a988",
+              "parentUUID": "0cf67da7-3a13-471c-af53-aaad2a34e439",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "9bee150e-6105-4365-baf1-22fb8483a06a"
+            "68e589db-b398-408c-b1f6-8d2bcf25a988"
           ],
           "failures": [],
           "pending": [],
@@ -66,7 +66,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "c3f5fff1-9c12-4fd1-bb3f-b9c07258a14d",
+          "uuid": "b1af2fde-42fe-45ad-96aa-e310b8149577",
           "title": "OathOdds",
           "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/index.spec.ts",
           "file": "/spec/index.spec.ts",
@@ -75,7 +75,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "edd090ce-bdad-46aa-a8b0-1dbbab175141",
+              "uuid": "d5ef8e6c-44ff-4ca8-8451-330819161781",
               "title": "rollCampaign",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/index.spec.ts",
               "file": "/spec/index.spec.ts",
@@ -95,15 +95,15 @@
                   "context": null,
                   "code": "const expected = [\n    {\n        oddsOfValue: new src_1.Fraction(1, 12),\n        value: { attack: 2, defense: 0, kill: 1 },\n    },\n    {\n        oddsOfValue: new src_1.Fraction(1, 18),\n        value: { attack: 2, defense: 1, kill: 1 },\n    },\n    {\n        oddsOfValue: new src_1.Fraction(1, 36),\n        value: { attack: 2, defense: 2, kill: 1 },\n    },\n    {\n        oddsOfValue: new src_1.Fraction(1, 6),\n        value: { attack: 1, defense: 0, kill: 0 },\n    },\n    {\n        oddsOfValue: new src_1.Fraction(1, 9),\n        value: { attack: 1, defense: 1, kill: 0 },\n    },\n    {\n        oddsOfValue: new src_1.Fraction(1, 18),\n        value: { attack: 1, defense: 2, kill: 0 },\n    },\n    {\n        oddsOfValue: new src_1.Fraction(1, 4),\n        value: { attack: 0, defense: 0, kill: 0 },\n    },\n    {\n        oddsOfValue: new src_1.Fraction(1, 6),\n        value: { attack: 0, defense: 1, kill: 0 },\n    },\n    {\n        oddsOfValue: new src_1.Fraction(1, 12),\n        value: { attack: 0, defense: 2, kill: 0 },\n    },\n];\nconst results = src_1.rollCampaign(1, 1);\nsupport_1.compareToExpected(chai_1.expect, expected, results, (a, b) => CampaignResult_1.campaignResultCompareFn(a, b) === 0);",
                   "err": {},
-                  "uuid": "2cc2a67a-637a-419d-bfd6-d6f5ce141509",
-                  "parentUUID": "edd090ce-bdad-46aa-a8b0-1dbbab175141",
+                  "uuid": "365d4946-bbbf-4ef6-9160-942f19dc659a",
+                  "parentUUID": "d5ef8e6c-44ff-4ca8-8451-330819161781",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "2cc2a67a-637a-419d-bfd6-d6f5ce141509"
+                "365d4946-bbbf-4ef6-9160-942f19dc659a"
               ],
               "failures": [],
               "pending": [],
@@ -114,7 +114,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "50a1e001-1bd3-4cfc-816d-72603e36ebed",
+              "uuid": "6a0df44b-4240-4abd-a3e7-61f3d096451d",
               "title": "computeCampaignSuccess",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/index.spec.ts",
               "file": "/spec/index.spec.ts",
@@ -125,7 +125,7 @@
                   "title": "returns remaining warbands along with odds",
                   "fullTitle": "OathOdds computeCampaignSuccess returns remaining warbands along with odds",
                   "timedOut": false,
-                  "duration": 4,
+                  "duration": 5,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -134,8 +134,8 @@
                   "context": null,
                   "code": "const results = src_1.computeCampaignSuccess(3, 3, 2, 2);\nchai_1.expect(results).to.have.length(4);\nconst withZero = results.filter((i) => i.remainingWarbands === 0);\nchai_1.expect(withZero).to.have.length(1);\nchai_1.expect(withZero[0].odds).to.be.sameFractionAs(new src_1.Fraction(2297, 7776));\nconst withOne = results.filter((i) => i.remainingWarbands === 1);\nchai_1.expect(withOne).to.have.length(1);\nchai_1.expect(withOne[0].odds).to.be.sameFractionAs(new src_1.Fraction(113, 432));\nconst withTwo = results.filter((i) => i.remainingWarbands === 2);\nchai_1.expect(withTwo).to.have.length(1);\nchai_1.expect(withTwo[0].odds).to.be.sameFractionAs(new src_1.Fraction(1645, 7776));\nconst withThree = results.filter((i) => i.remainingWarbands === 3);\nchai_1.expect(withThree).to.have.length(1);\nchai_1.expect(withThree[0].odds).to.be.sameFractionAs(new src_1.Fraction(1, 108));",
                   "err": {},
-                  "uuid": "90ac9243-8d20-49c0-a852-949d3a124189",
-                  "parentUUID": "50a1e001-1bd3-4cfc-816d-72603e36ebed",
+                  "uuid": "5d3f2e21-47e8-40f2-b810-a595f5aabe08",
+                  "parentUUID": "6a0df44b-4240-4abd-a3e7-61f3d096451d",
                   "isHook": false,
                   "skipped": false
                 },
@@ -143,7 +143,7 @@
                   "title": "returns results sorted by remaining warbands ascending",
                   "fullTitle": "OathOdds computeCampaignSuccess returns results sorted by remaining warbands ascending",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 2,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -152,21 +152,21 @@
                   "context": null,
                   "code": "chai_1.expect(src_1.computeCampaignSuccess(3, 3, 2, 2).map((i) => i.remainingWarbands)).to.deep.equal([0, 1, 2, 3]);",
                   "err": {},
-                  "uuid": "9fb3caf4-9b66-4c6f-bbbf-0ef2cca2b924",
-                  "parentUUID": "50a1e001-1bd3-4cfc-816d-72603e36ebed",
+                  "uuid": "3e7dfad5-271b-41ab-8932-f432628857ef",
+                  "parentUUID": "6a0df44b-4240-4abd-a3e7-61f3d096451d",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "90ac9243-8d20-49c0-a852-949d3a124189",
-                "9fb3caf4-9b66-4c6f-bbbf-0ef2cca2b924"
+                "5d3f2e21-47e8-40f2-b810-a595f5aabe08",
+                "3e7dfad5-271b-41ab-8932-f432628857ef"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 5,
+              "duration": 7,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -182,7 +182,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "a7f2a92a-0349-49c3-a288-8820bfd18d97",
+          "uuid": "9a3f0956-6210-46ce-ba08-a13eec1aa7fa",
           "title": "combinatorics",
           "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/math/combinatorics.spec.ts",
           "file": "/spec/math/combinatorics.spec.ts",
@@ -191,7 +191,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "c0bddd9c-cfda-49fa-abfa-e68d8e479b43",
+              "uuid": "aecc4802-bba3-447a-9f3e-023e69a3eea2",
               "title": "cartesianProduct",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/math/combinatorics.spec.ts",
               "file": "/spec/math/combinatorics.spec.ts",
@@ -211,15 +211,15 @@
                   "context": null,
                   "code": "const arr1 = [1, 2];\nconst arr2 = [3, 4];\nconst expected = [\n    [1, 3],\n    [1, 4],\n    [2, 3],\n    [2, 4],\n];\nchai_1.expect(combinatorics_1.cartesianProduct(arr1, arr2)).to.deep.equals(expected);",
                   "err": {},
-                  "uuid": "7ec15901-8450-47d9-9fc3-02c6ce59b302",
-                  "parentUUID": "c0bddd9c-cfda-49fa-abfa-e68d8e479b43",
+                  "uuid": "b54694a2-a1ab-4b25-bf86-bfd741f348bd",
+                  "parentUUID": "aecc4802-bba3-447a-9f3e-023e69a3eea2",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "7ec15901-8450-47d9-9fc3-02c6ce59b302"
+                "b54694a2-a1ab-4b25-bf86-bfd741f348bd"
               ],
               "failures": [],
               "pending": [],
@@ -240,7 +240,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "b3925c09-6abc-435b-ad78-846a00e2793c",
+          "uuid": "97c692df-b2aa-45d0-9218-d5f6b85c1a59",
           "title": "Fraction",
           "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/math/Fraction.spec.ts",
           "file": "/spec/math/Fraction.spec.ts",
@@ -260,8 +260,8 @@
               "context": null,
               "code": "const frac1 = new Fraction_1.Fraction(1, 3);\nconst frac2 = new Fraction_1.Fraction(1, 3);\nchai_1.expect(frac1.sameAs(frac2)).to.be.true;",
               "err": {},
-              "uuid": "75568ba9-b643-4cec-8b26-5a86e52fc736",
-              "parentUUID": "b3925c09-6abc-435b-ad78-846a00e2793c",
+              "uuid": "d63291d7-2d99-4979-b99e-94453dff5475",
+              "parentUUID": "97c692df-b2aa-45d0-9218-d5f6b85c1a59",
               "isHook": false,
               "skipped": false
             },
@@ -278,8 +278,8 @@
               "context": null,
               "code": "const frac1 = new Fraction_1.Fraction(1, 3);\nconst frac2 = new Fraction_1.Fraction(1, 4);\nchai_1.expect(frac1.sameAs(frac2)).to.be.false;",
               "err": {},
-              "uuid": "f2e323ba-5cad-456e-aa09-40da524c9c43",
-              "parentUUID": "b3925c09-6abc-435b-ad78-846a00e2793c",
+              "uuid": "e5cb0347-2320-4019-a420-c3342df28445",
+              "parentUUID": "97c692df-b2aa-45d0-9218-d5f6b85c1a59",
               "isHook": false,
               "skipped": false
             },
@@ -296,8 +296,8 @@
               "context": null,
               "code": "const frac1 = new Fraction_1.Fraction(1, 2);\nconst frac2 = new Fraction_1.Fraction(2, 4);\nchai_1.expect(frac1.sameAs(frac2)).to.be.true;",
               "err": {},
-              "uuid": "266f08df-4750-43e9-ad81-521cc5e2c4ef",
-              "parentUUID": "b3925c09-6abc-435b-ad78-846a00e2793c",
+              "uuid": "866abb88-f017-4077-960b-d6cf5378d7a3",
+              "parentUUID": "97c692df-b2aa-45d0-9218-d5f6b85c1a59",
               "isHook": false,
               "skipped": false
             },
@@ -314,32 +314,14 @@
               "context": null,
               "code": "const frac1 = new Fraction_1.Fraction(1, 3);\nconst frac2 = new Fraction_1.Fraction(1, 4);\nconst expected = new Fraction_1.Fraction(7, 12);\nchai_1.expect(frac1.add(frac2).sameAs(expected)).to.be.true;",
               "err": {},
-              "uuid": "470e1ba4-d3ab-4b3f-b43e-348bafc542e4",
-              "parentUUID": "b3925c09-6abc-435b-ad78-846a00e2793c",
+              "uuid": "a878f662-b098-4bce-aba2-61f61dc7491e",
+              "parentUUID": "97c692df-b2aa-45d0-9218-d5f6b85c1a59",
               "isHook": false,
               "skipped": false
             },
             {
               "title": "can multiply fractions",
               "fullTitle": "Fraction can multiply fractions",
-              "timedOut": false,
-              "duration": 1,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "const frac1 = new Fraction_1.Fraction(1, 3);\nconst frac2 = new Fraction_1.Fraction(1, 4);\nconst expected = new Fraction_1.Fraction(1, 12);\nchai_1.expect(frac1.multiply(frac2).sameAs(expected)).to.be.true;",
-              "err": {},
-              "uuid": "16d157d0-2eb1-482d-99ef-10a4f63bb57d",
-              "parentUUID": "b3925c09-6abc-435b-ad78-846a00e2793c",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "can compute to float",
-              "fullTitle": "Fraction can compute to float",
               "timedOut": false,
               "duration": 0,
               "state": "passed",
@@ -348,22 +330,40 @@
               "fail": false,
               "pending": false,
               "context": null,
+              "code": "const frac1 = new Fraction_1.Fraction(1, 3);\nconst frac2 = new Fraction_1.Fraction(1, 4);\nconst expected = new Fraction_1.Fraction(1, 12);\nchai_1.expect(frac1.multiply(frac2).sameAs(expected)).to.be.true;",
+              "err": {},
+              "uuid": "fd403a42-88b0-44fe-b677-e0aac25d00fe",
+              "parentUUID": "97c692df-b2aa-45d0-9218-d5f6b85c1a59",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "can compute to float",
+              "fullTitle": "Fraction can compute to float",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
               "code": "const frac = new Fraction_1.Fraction(1, 2);\nchai_1.expect(frac.valueOf()).to.equal(0.5);",
               "err": {},
-              "uuid": "fca900c2-c14e-4750-8fe9-e859647257e1",
-              "parentUUID": "b3925c09-6abc-435b-ad78-846a00e2793c",
+              "uuid": "6b9acef3-b3d1-431e-99fe-e8c3cce2b363",
+              "parentUUID": "97c692df-b2aa-45d0-9218-d5f6b85c1a59",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "75568ba9-b643-4cec-8b26-5a86e52fc736",
-            "f2e323ba-5cad-456e-aa09-40da524c9c43",
-            "266f08df-4750-43e9-ad81-521cc5e2c4ef",
-            "470e1ba4-d3ab-4b3f-b43e-348bafc542e4",
-            "16d157d0-2eb1-482d-99ef-10a4f63bb57d",
-            "fca900c2-c14e-4750-8fe9-e859647257e1"
+            "d63291d7-2d99-4979-b99e-94453dff5475",
+            "e5cb0347-2320-4019-a420-c3342df28445",
+            "866abb88-f017-4077-960b-d6cf5378d7a3",
+            "a878f662-b098-4bce-aba2-61f61dc7491e",
+            "fd403a42-88b0-44fe-b677-e0aac25d00fe",
+            "6b9acef3-b3d1-431e-99fe-e8c3cce2b363"
           ],
           "failures": [],
           "pending": [],
@@ -374,7 +374,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "aaf47911-1d12-4ad9-8a75-f4c05ed96fca",
+          "uuid": "6f8857eb-c00b-4a0f-a715-66c6a713f26d",
           "title": "math",
           "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/math/index.spec.ts",
           "file": "/spec/math/index.spec.ts",
@@ -383,7 +383,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "3dd3cf10-3af3-4fb6-a9f7-7475850a113e",
+              "uuid": "751372ae-4213-44ec-b2fc-b440dd052ec7",
               "title": "combineSetWithOdds",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/math/index.spec.ts",
               "file": "/spec/math/index.spec.ts",
@@ -394,7 +394,7 @@
                   "title": "combines 2 sets with odds",
                   "fullTitle": "math combineSetWithOdds combines 2 sets with odds",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -403,8 +403,8 @@
                   "context": null,
                   "code": "const swo1 = {\n    oddsOfValue: new math_1.Fraction(1, 3),\n    value: [1, 2],\n};\nconst swo2 = {\n    oddsOfValue: new math_1.Fraction(1, 2),\n    value: [\"a\", \"b\"],\n};\nconst combined = math_1.combineSetWithOdds(swo1, swo2);\nchai_1.expect(combined.value).to.deep.equal([1, 2, \"a\", \"b\"]);\nchai_1.expect(combined.oddsOfValue.sameAs(new math_1.Fraction(1, 6))).to.be.true;",
                   "err": {},
-                  "uuid": "9501ca33-089d-4537-8eef-821cd4fc1135",
-                  "parentUUID": "3dd3cf10-3af3-4fb6-a9f7-7475850a113e",
+                  "uuid": "801a7199-9b7e-48e6-b450-37e47613d05d",
+                  "parentUUID": "751372ae-4213-44ec-b2fc-b440dd052ec7",
                   "isHook": false,
                   "skipped": false
                 },
@@ -421,27 +421,27 @@
                   "context": null,
                   "code": "const sets = [\n    { value: [1, 2], oddsOfValue: new math_1.Fraction(1, 2) },\n    { value: [5, 6], oddsOfValue: new math_1.Fraction(1, 3) },\n    { value: [8, 9], oddsOfValue: new math_1.Fraction(1, 4) },\n];\nconst combined = sets.reduce(math_1.combineSetWithOdds);\nchai_1.expect(combined.value).to.deep.equal([1, 2, 5, 6, 8, 9]);\nchai_1.expect(combined.oddsOfValue.sameAs(new math_1.Fraction(1, 24))).to.be.true;",
                   "err": {},
-                  "uuid": "c751bb43-b34d-4afc-92b0-9f9a8a95052d",
-                  "parentUUID": "3dd3cf10-3af3-4fb6-a9f7-7475850a113e",
+                  "uuid": "0b213aab-76c1-429f-935d-5c5d99aa4730",
+                  "parentUUID": "751372ae-4213-44ec-b2fc-b440dd052ec7",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "9501ca33-089d-4537-8eef-821cd4fc1135",
-                "c751bb43-b34d-4afc-92b0-9f9a8a95052d"
+                "801a7199-9b7e-48e6-b450-37e47613d05d",
+                "0b213aab-76c1-429f-935d-5c5d99aa4730"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 0,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "d62df4be-7a9f-4768-9cbc-f2cdbad0f947",
+              "uuid": "eb3df1c5-9a6e-4e41-b490-b56e271f2446",
               "title": "odds",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/math/index.spec.ts",
               "file": "/spec/math/index.spec.ts",
@@ -452,7 +452,7 @@
                   "title": "with only 1 random device",
                   "fullTitle": "math odds with only 1 random device",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -461,8 +461,8 @@
                   "context": null,
                   "code": "const d6 = new math_1.RandomDevice([\n    [1, new math_1.Fraction(1, 6)],\n    [2, new math_1.Fraction(1, 6)],\n    [3, new math_1.Fraction(1, 6)],\n    [4, new math_1.Fraction(1, 6)],\n    [5, new math_1.Fraction(1, 6)],\n    [6, new math_1.Fraction(1, 6)],\n]);\nconst expected = [\n    { value: [1], oddsOfValue: new math_1.Fraction(1, 6) },\n    { value: [2], oddsOfValue: new math_1.Fraction(1, 6) },\n    { value: [3], oddsOfValue: new math_1.Fraction(1, 6) },\n    { value: [4], oddsOfValue: new math_1.Fraction(1, 6) },\n    { value: [5], oddsOfValue: new math_1.Fraction(1, 6) },\n    { value: [6], oddsOfValue: new math_1.Fraction(1, 6) },\n];\nconst results = math_1.odds([d6]);\nsupport_1.compareToExpected(chai_1.expect, expected, results, support_1.arraysOfOutcomesAreSame);",
                   "err": {},
-                  "uuid": "0fd90872-1621-435c-bfbc-26387c9e072e",
-                  "parentUUID": "d62df4be-7a9f-4768-9cbc-f2cdbad0f947",
+                  "uuid": "8bd1e129-26ff-4740-a893-fe9bb6510c13",
+                  "parentUUID": "eb3df1c5-9a6e-4e41-b490-b56e271f2446",
                   "isHook": false,
                   "skipped": false
                 },
@@ -479,8 +479,8 @@
                   "context": null,
                   "code": "const d4 = new math_1.RandomDevice([\n    [1, new math_1.Fraction(1, 4)],\n    [2, new math_1.Fraction(1, 4)],\n    [3, new math_1.Fraction(1, 4)],\n    [4, new math_1.Fraction(1, 4)],\n]);\nconst abcDie = new math_1.RandomDevice([\n    [\"a\", new math_1.Fraction(1, 3)],\n    [\"b\", new math_1.Fraction(1, 3)],\n    [\"c\", new math_1.Fraction(1, 3)],\n]);\nconst expected = [\n    { value: [1, \"a\"], oddsOfValue: new math_1.Fraction(1, 12) },\n    { value: [1, \"b\"], oddsOfValue: new math_1.Fraction(1, 12) },\n    { value: [1, \"c\"], oddsOfValue: new math_1.Fraction(1, 12) },\n    { value: [2, \"a\"], oddsOfValue: new math_1.Fraction(1, 12) },\n    { value: [2, \"b\"], oddsOfValue: new math_1.Fraction(1, 12) },\n    { value: [2, \"c\"], oddsOfValue: new math_1.Fraction(1, 12) },\n    { value: [3, \"a\"], oddsOfValue: new math_1.Fraction(1, 12) },\n    { value: [3, \"b\"], oddsOfValue: new math_1.Fraction(1, 12) },\n    { value: [3, \"c\"], oddsOfValue: new math_1.Fraction(1, 12) },\n    { value: [4, \"a\"], oddsOfValue: new math_1.Fraction(1, 12) },\n    { value: [4, \"b\"], oddsOfValue: new math_1.Fraction(1, 12) },\n    { value: [4, \"c\"], oddsOfValue: new math_1.Fraction(1, 12) },\n];\nconst results = math_1.odds([d4, abcDie]);\nsupport_1.compareToExpected(chai_1.expect, expected, results, support_1.arraysOfOutcomesAreSame);",
                   "err": {},
-                  "uuid": "56b1c951-d075-4b5e-8647-1c8f18155bcb",
-                  "parentUUID": "d62df4be-7a9f-4768-9cbc-f2cdbad0f947",
+                  "uuid": "d1ed004f-918e-4826-ad41-23ba27f62694",
+                  "parentUUID": "eb3df1c5-9a6e-4e41-b490-b56e271f2446",
                   "isHook": false,
                   "skipped": false
                 },
@@ -497,28 +497,28 @@
                   "context": null,
                   "code": "const d2 = new math_1.RandomDevice([\n    [1, new math_1.Fraction(1, 2)],\n    [2, new math_1.Fraction(1, 2)],\n]);\nconst expected = [\n    { value: [1, 1], oddsOfValue: new math_1.Fraction(1, 4) },\n    { value: [1, 2], oddsOfValue: new math_1.Fraction(1, 2) },\n    { value: [2, 2], oddsOfValue: new math_1.Fraction(1, 4) },\n];\nconst results = math_1.odds([d2, d2]);\nsupport_1.compareToExpected(chai_1.expect, expected, results, support_1.arraysOfOutcomesAreSame);",
                   "err": {},
-                  "uuid": "e5084f04-de66-4b6c-b39d-0ca022c894e6",
-                  "parentUUID": "d62df4be-7a9f-4768-9cbc-f2cdbad0f947",
+                  "uuid": "a3721447-31d1-47d6-9128-e6049f7c74ff",
+                  "parentUUID": "eb3df1c5-9a6e-4e41-b490-b56e271f2446",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "0fd90872-1621-435c-bfbc-26387c9e072e",
-                "56b1c951-d075-4b5e-8647-1c8f18155bcb",
-                "e5084f04-de66-4b6c-b39d-0ca022c894e6"
+                "8bd1e129-26ff-4740-a893-fe9bb6510c13",
+                "d1ed004f-918e-4826-ad41-23ba27f62694",
+                "a3721447-31d1-47d6-9128-e6049f7c74ff"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3,
+              "duration": 4,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "dea261ed-0159-4369-adc5-9091972279b2",
+              "uuid": "aa3c7ce5-6c0f-4192-a3c8-feacdcfe89b0",
               "title": "roll",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/math/index.spec.ts",
               "file": "/spec/math/index.spec.ts",
@@ -538,8 +538,8 @@
                   "context": null,
                   "code": "const d4 = new math_1.RandomDevice([\n    [1, new math_1.Fraction(1, 4)],\n    [2, new math_1.Fraction(1, 4)],\n    [3, new math_1.Fraction(1, 4)],\n    [4, new math_1.Fraction(1, 4)],\n]);\nconst expected = [\n    { value: 1, oddsOfValue: new math_1.Fraction(1, 4) },\n    { value: 2, oddsOfValue: new math_1.Fraction(1, 4) },\n    { value: 3, oddsOfValue: new math_1.Fraction(1, 4) },\n    { value: 4, oddsOfValue: new math_1.Fraction(1, 4) },\n];\nconst results = math_1.roll(d4, 1, sum, (a, b) => a === b);\nsupport_1.compareToExpected(chai_1.expect, expected, results, (a, b) => a === b);",
                   "err": {},
-                  "uuid": "f3af47dc-6558-4772-9c5a-1eb9b3ed4808",
-                  "parentUUID": "dea261ed-0159-4369-adc5-9091972279b2",
+                  "uuid": "0e2fd300-1ad3-4a25-bdb4-3bfb989e0c5c",
+                  "parentUUID": "aa3c7ce5-6c0f-4192-a3c8-feacdcfe89b0",
                   "isHook": false,
                   "skipped": false
                 },
@@ -556,16 +556,16 @@
                   "context": null,
                   "code": "const d4 = new math_1.RandomDevice([\n    [1, new math_1.Fraction(1, 4)],\n    [2, new math_1.Fraction(1, 4)],\n    [3, new math_1.Fraction(1, 4)],\n    [4, new math_1.Fraction(1, 4)],\n]);\nconst expected = [\n    { value: 2, oddsOfValue: new math_1.Fraction(1, 16) },\n    { value: 3, oddsOfValue: new math_1.Fraction(2, 16) },\n    { value: 4, oddsOfValue: new math_1.Fraction(3, 16) },\n    { value: 5, oddsOfValue: new math_1.Fraction(4, 16) },\n    { value: 6, oddsOfValue: new math_1.Fraction(3, 16) },\n    { value: 7, oddsOfValue: new math_1.Fraction(2, 16) },\n    { value: 8, oddsOfValue: new math_1.Fraction(1, 16) },\n];\nconst results = math_1.roll(d4, 2, sum, (a, b) => a === b);\nsupport_1.compareToExpected(chai_1.expect, expected, results, (a, b) => a === b);",
                   "err": {},
-                  "uuid": "9a93015e-be33-4493-aefd-3eee2ae742f6",
-                  "parentUUID": "dea261ed-0159-4369-adc5-9091972279b2",
+                  "uuid": "ce807256-0706-4a7e-a494-60e8e3d14970",
+                  "parentUUID": "aa3c7ce5-6c0f-4192-a3c8-feacdcfe89b0",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "f3af47dc-6558-4772-9c5a-1eb9b3ed4808",
-                "9a93015e-be33-4493-aefd-3eee2ae742f6"
+                "0e2fd300-1ad3-4a25-bdb4-3bfb989e0c5c",
+                "ce807256-0706-4a7e-a494-60e8e3d14970"
               ],
               "failures": [],
               "pending": [],
@@ -586,7 +586,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "b5c154d3-a8ac-4d30-9a85-86d0a11bc78a",
+          "uuid": "810ecf6b-7970-45f3-80b2-cde697550b1d",
           "title": "Oath domain model",
           "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/oath/oath.spec.ts",
           "file": "/spec/oath/oath.spec.ts",
@@ -595,7 +595,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "da1037b6-f731-42d5-bc20-f1ec8b10435f",
+              "uuid": "8e5d70dc-3f08-4301-b732-80f76dc516d1",
               "title": "Attack dice faces",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/oath/oath.spec.ts",
               "file": "/spec/oath/oath.spec.ts",
@@ -615,15 +615,15 @@
                   "context": null,
                   "code": "const someFaces = [\n    oath_1.AttackDieFace.HOLLOW_SWORD,\n    oath_1.AttackDieFace.TWO_SWORDS_AND_SKULL,\n    oath_1.AttackDieFace.SWORD,\n    oath_1.AttackDieFace.SWORD,\n];\nconst expected = [\n    oath_1.AttackDieFace.HOLLOW_SWORD,\n    oath_1.AttackDieFace.SWORD,\n    oath_1.AttackDieFace.SWORD,\n    oath_1.AttackDieFace.TWO_SWORDS_AND_SKULL,\n];\nchai_1.expect(someFaces.sort()).to.deep.equal(expected);",
                   "err": {},
-                  "uuid": "9e2f0f90-765d-45e2-8886-76e9db986757",
-                  "parentUUID": "da1037b6-f731-42d5-bc20-f1ec8b10435f",
+                  "uuid": "fa4ef175-db11-48b5-94d1-8dcc99e024a7",
+                  "parentUUID": "8e5d70dc-3f08-4301-b732-80f76dc516d1",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "9e2f0f90-765d-45e2-8886-76e9db986757"
+                "fa4ef175-db11-48b5-94d1-8dcc99e024a7"
               ],
               "failures": [],
               "pending": [],
@@ -634,7 +634,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "6428ce40-6ea1-4730-ac3a-60d92d330a0c",
+              "uuid": "9501bd9b-8de8-4329-8440-3e117644b2f2",
               "title": "Defense dice faces",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/oath/oath.spec.ts",
               "file": "/spec/oath/oath.spec.ts",
@@ -645,7 +645,7 @@
                   "title": "should have consistent order",
                   "fullTitle": "Oath domain model Defense dice faces should have consistent order",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -654,26 +654,26 @@
                   "context": null,
                   "code": "const someFaces = [\n    oath_1.DefenseDieFace.DOUBLE,\n    oath_1.DefenseDieFace.TWO_SHIELDS,\n    oath_1.DefenseDieFace.SHIELD,\n    oath_1.DefenseDieFace.TWO_SHIELDS,\n    oath_1.DefenseDieFace.BLANK,\n    oath_1.DefenseDieFace.SHIELD,\n];\nconst expected = [\n    oath_1.DefenseDieFace.BLANK,\n    oath_1.DefenseDieFace.SHIELD,\n    oath_1.DefenseDieFace.SHIELD,\n    oath_1.DefenseDieFace.TWO_SHIELDS,\n    oath_1.DefenseDieFace.TWO_SHIELDS,\n    oath_1.DefenseDieFace.DOUBLE,\n];\nchai_1.expect(someFaces.sort()).to.deep.equal(expected);",
                   "err": {},
-                  "uuid": "c130fa2b-ae02-4f87-ba89-a5807574af63",
-                  "parentUUID": "6428ce40-6ea1-4730-ac3a-60d92d330a0c",
+                  "uuid": "8a64e848-bf98-4ba6-ac6e-f49e94043053",
+                  "parentUUID": "9501bd9b-8de8-4329-8440-3e117644b2f2",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "c130fa2b-ae02-4f87-ba89-a5807574af63"
+                "8a64e848-bf98-4ba6-ac6e-f49e94043053"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 0,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "3303954c-1f6a-4661-9765-e86d1ef9e751",
+              "uuid": "7085df7a-2f20-495b-9f09-55721a7e1a10",
               "title": "CampaignResult",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/oath/oath.spec.ts",
               "file": "/spec/oath/oath.spec.ts",
@@ -682,7 +682,7 @@
               "tests": [],
               "suites": [
                 {
-                  "uuid": "82dc8f6e-ab04-4568-8c61-145f88f82f0b",
+                  "uuid": "1890a00e-e05f-4bcc-9264-bbdd41369b87",
                   "title": "campaignResultCompareFn",
                   "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/oath/oath.spec.ts",
                   "file": "/spec/oath/oath.spec.ts",
@@ -702,8 +702,8 @@
                       "context": null,
                       "code": "chai_1.expect(oath_1.campaignResultCompareFn({ attack: 3, defense: 2, kill: 0 }, { attack: 3, defense: 2, kill: 0 })).to.equal(0);",
                       "err": {},
-                      "uuid": "25034691-f7a7-410c-a871-91d893b090d2",
-                      "parentUUID": "82dc8f6e-ab04-4568-8c61-145f88f82f0b",
+                      "uuid": "2a909e60-6012-4555-83c9-79ca76c257a7",
+                      "parentUUID": "1890a00e-e05f-4bcc-9264-bbdd41369b87",
                       "isHook": false,
                       "skipped": false
                     },
@@ -711,7 +711,7 @@
                       "title": "can be used to sort results by attack descending, then defense ascending then kill ascending",
                       "fullTitle": "Oath domain model CampaignResult campaignResultCompareFn can be used to sort results by attack descending, then defense ascending then kill ascending",
                       "timedOut": false,
-                      "duration": 1,
+                      "duration": 0,
                       "state": "passed",
                       "speed": "fast",
                       "pass": true,
@@ -720,21 +720,21 @@
                       "context": null,
                       "code": "const someResults = [\n    { attack: 5, defense: 2, kill: 0 },\n    { attack: 5, defense: 2, kill: 0 },\n    { attack: 3, defense: 0, kill: 2 },\n    { attack: 4, defense: 4, kill: 0 },\n    { attack: 5, defense: 3, kill: 3 },\n    { attack: 5, defense: 1, kill: 0 },\n    { attack: 5, defense: 1, kill: 2 },\n];\nconst expected = [\n    { attack: 5, defense: 1, kill: 0 },\n    { attack: 5, defense: 1, kill: 2 },\n    { attack: 5, defense: 2, kill: 0 },\n    { attack: 5, defense: 2, kill: 0 },\n    { attack: 5, defense: 3, kill: 3 },\n    { attack: 4, defense: 4, kill: 0 },\n    { attack: 3, defense: 0, kill: 2 },\n];\nchai_1.expect(someResults.sort(oath_1.campaignResultCompareFn)).to.deep.equal(expected);",
                       "err": {},
-                      "uuid": "f8898d04-9f7b-4fe3-943e-3e2b5bbd2a3f",
-                      "parentUUID": "82dc8f6e-ab04-4568-8c61-145f88f82f0b",
+                      "uuid": "4045412b-7a7f-4480-bb59-aa7fa24ee492",
+                      "parentUUID": "1890a00e-e05f-4bcc-9264-bbdd41369b87",
                       "isHook": false,
                       "skipped": false
                     }
                   ],
                   "suites": [],
                   "passes": [
-                    "25034691-f7a7-410c-a871-91d893b090d2",
-                    "f8898d04-9f7b-4fe3-943e-3e2b5bbd2a3f"
+                    "2a909e60-6012-4555-83c9-79ca76c257a7",
+                    "4045412b-7a7f-4480-bb59-aa7fa24ee492"
                   ],
                   "failures": [],
                   "pending": [],
                   "skipped": [],
-                  "duration": 1,
+                  "duration": 0,
                   "root": false,
                   "rootEmpty": false,
                   "_timeout": 2000
@@ -750,7 +750,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "88d8a892-785c-46e5-97fd-ebd6525fa511",
+              "uuid": "6fdfda9a-e67a-4a21-a58c-b91c31e36dc1",
               "title": "toAttackResult",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/oath/oath.spec.ts",
               "file": "/spec/oath/oath.spec.ts",
@@ -770,15 +770,34 @@
                   "context": null,
                   "code": "const rolled = [\n    oath_1.AttackDieFace.HOLLOW_SWORD,\n    oath_1.AttackDieFace.TWO_SWORDS_AND_SKULL,\n    oath_1.AttackDieFace.SWORD,\n    oath_1.AttackDieFace.SWORD,\n    oath_1.AttackDieFace.HOLLOW_SWORD,\n    oath_1.AttackDieFace.HOLLOW_SWORD,\n];\nconst result = oath_1.toAttackResult(rolled);\nchai_1.expect(result).to.deep.equal({ attack: 5, kill: 1 });",
                   "err": {},
-                  "uuid": "7c71c00f-cd77-4692-9191-8188291ea008",
-                  "parentUUID": "88d8a892-785c-46e5-97fd-ebd6525fa511",
+                  "uuid": "e36674fb-b85b-41bc-a012-2f96013580fa",
+                  "parentUUID": "6fdfda9a-e67a-4a21-a58c-b91c31e36dc1",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "throws an error when given an unknown die face",
+                  "fullTitle": "Oath domain model toAttackResult throws an error when given an unknown die face",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "chai_1.expect(() => {\n    oath_1.toAttackResult([\"unknown\"]);\n}).to.throw();",
+                  "err": {},
+                  "uuid": "92db9354-056f-4216-bb31-41a9dd72516c",
+                  "parentUUID": "6fdfda9a-e67a-4a21-a58c-b91c31e36dc1",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "7c71c00f-cd77-4692-9191-8188291ea008"
+                "e36674fb-b85b-41bc-a012-2f96013580fa",
+                "92db9354-056f-4216-bb31-41a9dd72516c"
               ],
               "failures": [],
               "pending": [],
@@ -789,7 +808,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "87b49295-af30-4e87-9af6-01092e542d98",
+              "uuid": "fe177179-11d4-47aa-b108-deb2111e2d3b",
               "title": "toDefenseResult",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/oath/oath.spec.ts",
               "file": "/spec/oath/oath.spec.ts",
@@ -800,7 +819,7 @@
                   "title": "can sum up a bunch of die faces into a campaign result",
                   "fullTitle": "Oath domain model toDefenseResult can sum up a bunch of die faces into a campaign result",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -809,20 +828,39 @@
                   "context": null,
                   "code": "const rolled = [\n    oath_1.DefenseDieFace.DOUBLE,\n    oath_1.DefenseDieFace.TWO_SHIELDS,\n    oath_1.DefenseDieFace.SHIELD,\n    oath_1.DefenseDieFace.TWO_SHIELDS,\n    oath_1.DefenseDieFace.BLANK,\n    oath_1.DefenseDieFace.SHIELD,\n];\nconst result = oath_1.toDefenseResult(rolled);\nchai_1.expect(result).to.deep.equal({ defense: 12 });",
                   "err": {},
-                  "uuid": "a50f65ed-de4f-4ae1-af82-1ac15f6f8fb3",
-                  "parentUUID": "87b49295-af30-4e87-9af6-01092e542d98",
+                  "uuid": "aca05b44-3255-41bf-b9b0-1045de441827",
+                  "parentUUID": "fe177179-11d4-47aa-b108-deb2111e2d3b",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "throws an error when given an unknown die face",
+                  "fullTitle": "Oath domain model toDefenseResult throws an error when given an unknown die face",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "chai_1.expect(() => {\n    oath_1.toDefenseResult([\"unknown\"]);\n}).to.throw();",
+                  "err": {},
+                  "uuid": "171a98b5-eaa2-41a5-ad13-36045d43b629",
+                  "parentUUID": "fe177179-11d4-47aa-b108-deb2111e2d3b",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "a50f65ed-de4f-4ae1-af82-1ac15f6f8fb3"
+                "aca05b44-3255-41bf-b9b0-1045de441827",
+                "171a98b5-eaa2-41a5-ad13-36045d43b629"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 0,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -838,7 +876,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "ce883344-78ed-440d-a125-e01107286514",
+          "uuid": "fa29c2d1-f63a-40fd-971a-d2b4076074b9",
           "title": "utils",
           "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/utils/arrays.spec.ts",
           "file": "/spec/utils/arrays.spec.ts",
@@ -847,7 +885,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "22b3ac41-f3d8-4d6d-a66a-01699bb39e6b",
+              "uuid": "07afa4c1-ce62-40cc-a64f-95fabbeffd1f",
               "title": "flatten",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/utils/arrays.spec.ts",
               "file": "/spec/utils/arrays.spec.ts",
@@ -858,7 +896,7 @@
                   "title": "flattens an array",
                   "fullTitle": "utils flatten flattens an array",
                   "timedOut": false,
-                  "duration": 0,
+                  "duration": 1,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -867,32 +905,68 @@
                   "context": null,
                   "code": "chai_1.expect(arrays_1.flatten([[], [1], [2]])).to.deep.equal([1, 2]);",
                   "err": {},
-                  "uuid": "002aa7e2-c1ab-4ffb-9676-09bffba47022",
-                  "parentUUID": "22b3ac41-f3d8-4d6d-a66a-01699bb39e6b",
+                  "uuid": "c6d09eae-4b32-414b-900d-79b1fee5e812",
+                  "parentUUID": "07afa4c1-ce62-40cc-a64f-95fabbeffd1f",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "002aa7e2-c1ab-4ffb-9676-09bffba47022"
+                "c6d09eae-4b32-414b-900d-79b1fee5e812"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 0,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "950c37e5-3c81-46e8-a450-27ad76597f26",
+              "uuid": "b53a80ae-349a-48a4-8527-107168af3478",
               "title": "arrayEquals",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/utils/arrays.spec.ts",
               "file": "/spec/utils/arrays.spec.ts",
               "beforeHooks": [],
               "afterHooks": [],
               "tests": [
+                {
+                  "title": "returns false if comparing to something else than an array",
+                  "fullTitle": "utils arrayEquals returns false if comparing to something else than an array",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "chai_1.expect(arrays_1.arrayEquals(\"thing\", [1, 2])).to.be.false;\nchai_1.expect(arrays_1.arrayEquals([1, 2], \"thing\")).to.be.false;",
+                  "err": {},
+                  "uuid": "23639493-3ba5-4a7c-8ff0-13e97305c486",
+                  "parentUUID": "b53a80ae-349a-48a4-8527-107168af3478",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "returns false if the arrays are not of the same length",
+                  "fullTitle": "utils arrayEquals returns false if the arrays are not of the same length",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "chai_1.expect(arrays_1.arrayEquals([1, 2, 3], [1, 2, 3, 4])).to.be.false;",
+                  "err": {},
+                  "uuid": "fb990e66-d6d1-4374-8771-3703e017c120",
+                  "parentUUID": "b53a80ae-349a-48a4-8527-107168af3478",
+                  "isHook": false,
+                  "skipped": false
+                },
                 {
                   "title": "returns true if the arrays contain the same values in the same order",
                   "fullTitle": "utils arrayEquals returns true if the arrays contain the same values in the same order",
@@ -906,8 +980,8 @@
                   "context": null,
                   "code": "chai_1.expect(arrays_1.arrayEquals([1, 2, 3], [1, 2, 3])).to.be.true;",
                   "err": {},
-                  "uuid": "b579b9c3-8059-42ec-b83c-b8a27fa6f867",
-                  "parentUUID": "950c37e5-3c81-46e8-a450-27ad76597f26",
+                  "uuid": "ca39c679-9ae8-4f23-b314-f0fa95f3835f",
+                  "parentUUID": "b53a80ae-349a-48a4-8527-107168af3478",
                   "isHook": false,
                   "skipped": false
                 },
@@ -924,8 +998,8 @@
                   "context": null,
                   "code": "chai_1.expect(arrays_1.arrayEquals([1, 2, 3], [1, 2, 4])).to.be.false;",
                   "err": {},
-                  "uuid": "0791a566-db1c-44a5-a04d-d798af4349e1",
-                  "parentUUID": "950c37e5-3c81-46e8-a450-27ad76597f26",
+                  "uuid": "0208c27d-1dcb-4ada-b52b-242db191eda0",
+                  "parentUUID": "b53a80ae-349a-48a4-8527-107168af3478",
                   "isHook": false,
                   "skipped": false
                 },
@@ -942,8 +1016,8 @@
                   "context": null,
                   "code": "chai_1.expect(arrays_1.arrayEquals([1, 2, 3], [3, 1, 2])).to.be.false;",
                   "err": {},
-                  "uuid": "9e69dae7-1317-4dee-a455-e17a0f4a3170",
-                  "parentUUID": "950c37e5-3c81-46e8-a450-27ad76597f26",
+                  "uuid": "7f46b30f-0fa0-47b5-ab3f-63440ebca103",
+                  "parentUUID": "b53a80ae-349a-48a4-8527-107168af3478",
                   "isHook": false,
                   "skipped": false
                 },
@@ -960,18 +1034,20 @@
                   "context": null,
                   "code": "chai_1.expect(arrays_1.arrayEquals([\"a\", \"b\"], [\"a\", \"b\"])).to.be.true;\nchai_1.expect(arrays_1.arrayEquals([1.0, 2.5], [1.0, 2.5])).to.be.true;\nchai_1.expect(arrays_1.arrayEquals([true, false], [true, false])).to.be.true;\nchai_1.expect(arrays_1.arrayEquals([1, null, undefined], [1, null, undefined])).to.be\n    .true;",
                   "err": {},
-                  "uuid": "9adc8ca9-3b9e-46ca-a3e0-5e372239a4cd",
-                  "parentUUID": "950c37e5-3c81-46e8-a450-27ad76597f26",
+                  "uuid": "aac2d376-4255-4c5d-980d-ec16b8fc58f9",
+                  "parentUUID": "b53a80ae-349a-48a4-8527-107168af3478",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "b579b9c3-8059-42ec-b83c-b8a27fa6f867",
-                "0791a566-db1c-44a5-a04d-d798af4349e1",
-                "9e69dae7-1317-4dee-a455-e17a0f4a3170",
-                "9adc8ca9-3b9e-46ca-a3e0-5e372239a4cd"
+                "23639493-3ba5-4a7c-8ff0-13e97305c486",
+                "fb990e66-d6d1-4374-8771-3703e017c120",
+                "ca39c679-9ae8-4f23-b314-f0fa95f3835f",
+                "0208c27d-1dcb-4ada-b52b-242db191eda0",
+                "7f46b30f-0fa0-47b5-ab3f-63440ebca103",
+                "aac2d376-4255-4c5d-980d-ec16b8fc58f9"
               ],
               "failures": [],
               "pending": [],
@@ -982,7 +1058,7 @@
               "_timeout": 2000
             },
             {
-              "uuid": "6c686352-711a-444d-b7a9-61e21b5678e9",
+              "uuid": "2682afd7-7572-4273-83d3-5a1768276251",
               "title": "replace",
               "fullFile": "/home/runner/work/oath-odds/oath-odds/spec/utils/arrays.spec.ts",
               "file": "/spec/utils/arrays.spec.ts",
@@ -1002,32 +1078,14 @@
                   "context": null,
                   "code": "const arr = [\"a\", \"b\", \"c\"];\nconst replaced = arrays_1.replace(arr, 1, \"x\");\nchai_1.expect(replaced).to.deep.equal([\"a\", \"x\", \"c\"]);",
                   "err": {},
-                  "uuid": "fcca2cdb-90cb-46c8-9c87-e953b38eccfd",
-                  "parentUUID": "6c686352-711a-444d-b7a9-61e21b5678e9",
+                  "uuid": "6c6d63f9-d31a-4d25-b1db-ce2f067616a1",
+                  "parentUUID": "2682afd7-7572-4273-83d3-5a1768276251",
                   "isHook": false,
                   "skipped": false
                 },
                 {
                   "title": "should be able to replace at first position",
                   "fullTitle": "utils replace should be able to replace at first position",
-                  "timedOut": false,
-                  "duration": 1,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "const arr = [\"a\", \"b\", \"c\"];\nconst replaced = arrays_1.replace(arr, 0, \"x\");\nchai_1.expect(replaced).to.deep.equal([\"x\", \"b\", \"c\"]);",
-                  "err": {},
-                  "uuid": "c3ec0187-94f4-4f4c-8218-3fb61e44916e",
-                  "parentUUID": "6c686352-711a-444d-b7a9-61e21b5678e9",
-                  "isHook": false,
-                  "skipped": false
-                },
-                {
-                  "title": "should be able to replace at last position",
-                  "fullTitle": "utils replace should be able to replace at last position",
                   "timedOut": false,
                   "duration": 0,
                   "state": "passed",
@@ -1036,10 +1094,28 @@
                   "fail": false,
                   "pending": false,
                   "context": null,
+                  "code": "const arr = [\"a\", \"b\", \"c\"];\nconst replaced = arrays_1.replace(arr, 0, \"x\");\nchai_1.expect(replaced).to.deep.equal([\"x\", \"b\", \"c\"]);",
+                  "err": {},
+                  "uuid": "7b1f1186-25a3-4650-bbb0-cd764c73fb9a",
+                  "parentUUID": "2682afd7-7572-4273-83d3-5a1768276251",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should be able to replace at last position",
+                  "fullTitle": "utils replace should be able to replace at last position",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
                   "code": "const arr = [\"a\", \"b\", \"c\"];\nconst replaced = arrays_1.replace(arr, 2, \"x\");\nchai_1.expect(replaced).to.deep.equal([\"a\", \"b\", \"x\"]);",
                   "err": {},
-                  "uuid": "c0598ca0-7af5-4df9-9912-ac01516f02c4",
-                  "parentUUID": "6c686352-711a-444d-b7a9-61e21b5678e9",
+                  "uuid": "601a3d89-e15d-4965-ac33-adcacaa728f5",
+                  "parentUUID": "2682afd7-7572-4273-83d3-5a1768276251",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1056,8 +1132,8 @@
                   "context": null,
                   "code": "const arr = [\"a\", \"b\", \"c\"];\nconst replaced = arrays_1.replace(arr, -1, \"x\");\nchai_1.expect(replaced).to.deep.equal([\"a\", \"b\", \"c\"]);",
                   "err": {},
-                  "uuid": "faf2efc2-c4fe-4869-8a13-5b705250d52c",
-                  "parentUUID": "6c686352-711a-444d-b7a9-61e21b5678e9",
+                  "uuid": "1be0a995-df63-462e-b15b-5abd48322064",
+                  "parentUUID": "2682afd7-7572-4273-83d3-5a1768276251",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1065,7 +1141,7 @@
                   "title": "should return the same array if specified index is > array length",
                   "fullTitle": "utils replace should return the same array if specified index is > array length",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -1074,8 +1150,8 @@
                   "context": null,
                   "code": "const arr = [\"a\", \"b\", \"c\"];\nconst replaced = arrays_1.replace(arr, 3, \"x\");\nchai_1.expect(replaced).to.deep.equal([\"a\", \"b\", \"c\"]);",
                   "err": {},
-                  "uuid": "21e60675-1d89-4b1b-92d3-4d25ae0ef8c6",
-                  "parentUUID": "6c686352-711a-444d-b7a9-61e21b5678e9",
+                  "uuid": "8a65b277-c42d-4fa2-b36c-04fd3eacf792",
+                  "parentUUID": "2682afd7-7572-4273-83d3-5a1768276251",
                   "isHook": false,
                   "skipped": false
                 },
@@ -1092,25 +1168,25 @@
                   "context": null,
                   "code": "const arr = [\"a\", \"b\", \"c\"];\narrays_1.replace(arr, 1, \"x\");\nchai_1.expect(arr).to.deep.equal([\"a\", \"b\", \"c\"]);",
                   "err": {},
-                  "uuid": "bf679f3d-049b-43aa-b41d-1928aec1aa4b",
-                  "parentUUID": "6c686352-711a-444d-b7a9-61e21b5678e9",
+                  "uuid": "9c785b82-8a14-4eb9-954e-3862c4b4c949",
+                  "parentUUID": "2682afd7-7572-4273-83d3-5a1768276251",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "fcca2cdb-90cb-46c8-9c87-e953b38eccfd",
-                "c3ec0187-94f4-4f4c-8218-3fb61e44916e",
-                "c0598ca0-7af5-4df9-9912-ac01516f02c4",
-                "faf2efc2-c4fe-4869-8a13-5b705250d52c",
-                "21e60675-1d89-4b1b-92d3-4d25ae0ef8c6",
-                "bf679f3d-049b-43aa-b41d-1928aec1aa4b"
+                "6c6d63f9-d31a-4d25-b1db-ce2f067616a1",
+                "7b1f1186-25a3-4650-bbb0-cd764c73fb9a",
+                "601a3d89-e15d-4965-ac33-adcacaa728f5",
+                "1be0a995-df63-462e-b15b-5abd48322064",
+                "8a65b277-c42d-4fa2-b36c-04fd3eacf792",
+                "9c785b82-8a14-4eb9-954e-3862c4b4c949"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 2,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
